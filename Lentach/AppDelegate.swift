@@ -21,8 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let rootController: UIViewController!
         rootController = UIStoryboard(storyboard: .feed).instantiateInitialViewController()
+        let navigationController = UINavigationController(rootViewController: rootController)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = rootController
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
         

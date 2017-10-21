@@ -49,6 +49,11 @@
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4od-pH-PBP" secondAttribute="trailing" constant="5" id="w7g-Mr-qfm"/>
                                     </constraints>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="cQW-hk-cCU">
+                                    <rect key="frame" x="0.0" y="956" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskTableViewCell" rowHeight="195" id="Rcd-GI-V6g" customClass="TaskTableViewCell" customModule="Lentach" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="135" width="375" height="195"/>

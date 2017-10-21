@@ -159,10 +159,23 @@ fileprivate extension FeedController {
     }
     
     func configure() {
+        self.addPlusButton()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
+        
+    func addPlusButton() {
+        let buttonSize = CGSize(width: 121, height: 116)
+        let plusButton = UIButton()
+        plusButton.setImage(#imageLiteral(resourceName: "plusButton"), for: .normal)
+        plusButton.frame = CGRect(
+            x: (UIScreen.main.bounds.width - buttonSize.width) / 2,
+            y: UIScreen.main.bounds.height - 110,
+            width: buttonSize.width,
+            height: buttonSize.height)
+        self.navigationController?.view.addSubview(plusButton)
     }
     
 }
