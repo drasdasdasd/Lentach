@@ -14,6 +14,7 @@ let BaseURL = "http://92.53.102.42:3000"
 enum ServerService {
     
     case vkLogin(token: String)
+    case setWallet(userId: String, bitcoin: String)
     case listOfTask
     case listOfNews
     
@@ -27,7 +28,13 @@ extension ServerService: TargetType {
     var task: Task {
         switch self {
         case .vkLogin(let token):
-            return .requestParameters(parameters: ["data": token], encoding: URLEncoding.default)
+            return .requestParameters(
+                parameters: ["data": token],
+                encoding: URLEncoding.default)
+        case .setWallet(let userId, let bitcoin):
+            return .requestParameters(
+                parameters: ["userId": userId, "value": bitcoin],
+                encoding: URLEncoding.default)
         default:
             return .requestPlain
         }
@@ -45,6 +52,8 @@ extension ServerService: TargetType {
         switch self {
         case .vkLogin:
             return "/api/users/auth"
+        case .setWallet:
+            return "/api/users/setWallet"
         case .listOfTask:
             return "/api/tasks"
         case .listOfNews:
@@ -56,7 +65,7 @@ extension ServerService: TargetType {
         switch self {
         case .listOfTask, .listOfNews:
             return .get
-        case .vkLogin:
+        case .vkLogin, .setWallet:
             return .post
         }
     }
