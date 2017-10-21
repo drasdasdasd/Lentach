@@ -49,7 +49,7 @@ class NewsWithMediaCell: UITableViewCell {
             return
         }
         
-        if let url = media.mediaURL {
+        if let url = media.mediaURL, media.type != "video" {
             self.mediaImageView.kf.setImage(with: URL(string: url))
         } else {
             self.mediaImageView.image = #imageLiteral(resourceName: "mockVideo")

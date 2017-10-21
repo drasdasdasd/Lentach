@@ -13,5 +13,5 @@ target 'Lentach' do
   pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git’, :branch => ‘swift-4’
   pod 'Kingfisher'
   pod 'VK-ios-sdk'
-
+  pod 'MWPhotoBrowser'
 end

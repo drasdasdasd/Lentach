@@ -24,7 +24,7 @@ class MediaModel: Mappable {
     
     var mediaURL: String? {
         if self.type == "video" {
-            return nil
+            return BaseURL + "/static/media/" + self.id
         } else {
             return BaseURL + "/static/media/" + self.id
         }

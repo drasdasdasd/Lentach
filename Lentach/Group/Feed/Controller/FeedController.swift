@@ -154,6 +154,12 @@ extension FeedController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let news = self.news[indexPath.row - 1]
+        let browser = MediaCreator().browser(news: news)
+        self.navigationController?.pushViewController(browser, animated: true)
+    }
+    
 }
 
 // MARK: -
