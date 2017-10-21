@@ -180,9 +180,17 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		B6DE059E1F9BB44000638ACA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B6EC8FC01F9A7AED00BA75E2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B6DE059E1F9BB44000638ACA /* Cell */,
 				B6EC8FC61F9A7B0B00BA75E2 /* Server */,
 				B6EC8FC21F9A7AF400BA75E2 /* Manager */,
 				B6EC8FC11F9A7AF100BA75E2 /* Model */,
