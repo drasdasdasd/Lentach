@@ -10,12 +10,21 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
 
+    // - UI
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    // - Data
+    var tasks = [TaskModel]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+    }
+    
+    func set(tasks: [TaskModel]) {
+        self.tasks = tasks
+        self.collectionView.reloadData()
     }
 
 }
@@ -30,13 +39,14 @@ extension TaskTableViewCell: UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.tasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: Cell.task.rawValue,
             for: indexPath) as! TaskCollectionViewCell
+        cell.set(task: self.tasks[indexPath.row])
         return cell
     }
     

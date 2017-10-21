@@ -7,13 +7,34 @@
 //
 
 import UIKit
+import MapKit
 
 class TaskCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var backgroundWhiteView: UIView!
+    @IBOutlet weak var taskMapView: MKMapView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.configureBackground()
+    }
+    
+    func set(task: TaskModel) {
+        self.nameLabel.text = task.title
+        self.priceLabel.text = "\(task.sum)руб."
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: task.place.lat, longitude: task.place.long)
+        self.taskMapView.addAnnotation(annotation)
+        
+        let camera = MKMapCamera(lookingAtCenter: annotation.coordinate, fromDistance: 3500, pitch: 20, heading: 20)
+        self.taskMapView.setCamera(camera, animated: false)
+    }
+    
+    func configureBackground() {
         self.backgroundWhiteView.backgroundColor = UIColor.white
         self.backgroundWhiteView.layer.cornerRadius = 5
         self.backgroundWhiteView.layer.masksToBounds = false

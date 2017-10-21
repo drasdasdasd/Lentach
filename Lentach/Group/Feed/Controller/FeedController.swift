@@ -44,6 +44,7 @@ fileprivate extension FeedController {
                     let json = JSON(moyaResponse.data).object
                     if let tasks = Mapper<TaskModel>().mapArray(JSONObject: json) {
                         self.tasks = tasks
+                        self.getNews()
                     }
                 } else {
                     SVProgressHUD.showError(withStatus: "Ошибка")
@@ -63,6 +64,7 @@ fileprivate extension FeedController {
                     let json = JSON(moyaResponse.data).object
                     if let news = Mapper<NewsModel>().mapArray(JSONObject: json) {
                         self.news = news
+                        self.tableView.reloadData()
                     }
                 } else {
                     SVProgressHUD.showError(withStatus: "Ошибка")
@@ -107,6 +109,7 @@ fileprivate extension FeedController {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: Cell.task.rawValue,
             for: indexPath) as! TaskTableViewCell
+        cell.set(tasks: self.tasks)
         return cell
     }
     

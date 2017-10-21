@@ -19,7 +19,7 @@ class PlaceModel: Mappable {
     
     func mapping(map: Map) {
         lat <- map["lat"]
-        long <- map["long"]
+        long <- map["lng"]
     }
     
 }

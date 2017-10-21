@@ -129,6 +129,10 @@
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="backgroundWhiteView" destination="OvV-4Q-eD9" id="cBg-LW-MjJ"/>
+                                                                <outlet property="nameLabel" destination="SCA-0x-TRf" id="VsR-lq-edc"/>
+                                                                <outlet property="priceLabel" destination="fjf-H5-QJ4" id="yrY-KH-j10"/>
+                                                                <outlet property="taskMapView" destination="bR4-5c-C5f" id="y5c-25-f86"/>
+                                                                <outlet property="timeLabel" destination="ZOF-mz-aUD" id="J1s-Cc-fb5"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
