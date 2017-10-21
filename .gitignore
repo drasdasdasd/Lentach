@@ -266,3 +266,130 @@ Pods/VK-ios-sdk/library/Source/Views/VKShareDialogController.h
 Pods/VK-ios-sdk/library/Source/Views/VKShareDialogController.m
 Pods/VK-ios-sdk/library/Source/Views/VKSharedTransitioningObject.h
 Pods/VK-ios-sdk/library/Source/Views/VKSharedTransitioningObject.m
+Pods/Target Support Files/DACircularProgress/Info.plist
+Pods/Target Support Files/MBProgressHUD/Info.plist
+Pods/Target Support Files/MBProgressHUD/MBProgressHUD-dummy.m
+Pods/Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch
+Pods/Target Support Files/MBProgressHUD/MBProgressHUD-umbrella.h
+Pods/Target Support Files/MBProgressHUD/MBProgressHUD.modulemap
+Pods/Target Support Files/MBProgressHUD/MBProgressHUD.xcconfig
+Pods/Target Support Files/MWPhotoBrowser/Info.plist
+Pods/Target Support Files/MWPhotoBrowser/MWPhotoBrowser-dummy.m
+Pods/Target Support Files/MWPhotoBrowser/MWPhotoBrowser-prefix.pch
+Pods/Target Support Files/MWPhotoBrowser/MWPhotoBrowser-umbrella.h
+Pods/Target Support Files/MWPhotoBrowser/MWPhotoBrowser.modulemap
+Pods/Target Support Files/MWPhotoBrowser/MWPhotoBrowser.xcconfig
+Pods/Target Support Files/MWPhotoBrowser/ResourceBundle-MWPhotoBrowser-Info.plist
+Pods/Target Support Files/SDWebImage/Info.plist
+Pods/Target Support Files/SDWebImage/SDWebImage-dummy.m
+Pods/Target Support Files/SDWebImage/SDWebImage-prefix.pch
+Pods/Target Support Files/SDWebImage/SDWebImage-umbrella.h
+Pods/Target Support Files/SDWebImage/SDWebImage.modulemap
+Pods/Target Support Files/SDWebImage/SDWebImage.xcconfig
+Pods/DACircularProgress/LICENSE.md
+Pods/DACircularProgress/README.md
+Pods/DACircularProgress/DACircularProgress/DACircularProgressView.h
+Pods/DACircularProgress/DACircularProgress/DACircularProgressView.m
+Pods/DACircularProgress/DACircularProgress/DALabeledCircularProgressView.h
+Pods/DACircularProgress/DACircularProgress/DALabeledCircularProgressView.m
+Pods/MBProgressHUD/LICENSE
+Pods/MBProgressHUD/MBProgressHUD.h
+Pods/MBProgressHUD/MBProgressHUD.m
+Pods/MBProgressHUD/README.mdown
+Pods/MWPhotoBrowser/LICENSE
+Pods/MWPhotoBrowser/README.md
+Pods/MWPhotoBrowser/Pod/Assets/ImageError.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageError@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageError@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedOff.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedOff@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedOff@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedOn.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedOn@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedOn@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedSmallOff.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedSmallOff@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedSmallOff@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedSmallOn.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedSmallOn@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/ImageSelectedSmallOn@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/PlayButtonOverlayLarge.png
+Pods/MWPhotoBrowser/Pod/Assets/PlayButtonOverlayLarge@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/PlayButtonOverlayLarge@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/PlayButtonOverlayLargeTap.png
+Pods/MWPhotoBrowser/Pod/Assets/PlayButtonOverlayLargeTap@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/PlayButtonOverlayLargeTap@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/UIBarButtonItemArrowLeft.png
+Pods/MWPhotoBrowser/Pod/Assets/UIBarButtonItemArrowLeft@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/UIBarButtonItemArrowLeft@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/UIBarButtonItemArrowRight.png
+Pods/MWPhotoBrowser/Pod/Assets/UIBarButtonItemArrowRight@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/UIBarButtonItemArrowRight@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/UIBarButtonItemGrid.png
+Pods/MWPhotoBrowser/Pod/Assets/UIBarButtonItemGrid@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/UIBarButtonItemGrid@3x.png
+Pods/MWPhotoBrowser/Pod/Assets/VideoOverlay.png
+Pods/MWPhotoBrowser/Pod/Assets/VideoOverlay@2x.png
+Pods/MWPhotoBrowser/Pod/Assets/VideoOverlay@3x.png
+Pods/MWPhotoBrowser/Pod/Classes/MWCaptionView.h
+Pods/MWPhotoBrowser/Pod/Classes/MWCaptionView.m
+Pods/MWPhotoBrowser/Pod/Classes/MWCommon.h
+Pods/MWPhotoBrowser/Pod/Classes/MWGridCell.h
+Pods/MWPhotoBrowser/Pod/Classes/MWGridCell.m
+Pods/MWPhotoBrowser/Pod/Classes/MWGridViewController.h
+Pods/MWPhotoBrowser/Pod/Classes/MWGridViewController.m
+Pods/MWPhotoBrowser/Pod/Classes/MWPhoto.h
+Pods/MWPhotoBrowser/Pod/Classes/MWPhoto.m
+Pods/MWPhotoBrowser/Pod/Classes/MWPhotoBrowser.h
+Pods/MWPhotoBrowser/Pod/Classes/MWPhotoBrowser.m
+Pods/MWPhotoBrowser/Pod/Classes/MWPhotoBrowserPrivate.h
+Pods/MWPhotoBrowser/Pod/Classes/MWPhotoProtocol.h
+Pods/MWPhotoBrowser/Pod/Classes/MWTapDetectingImageView.h
+Pods/MWPhotoBrowser/Pod/Classes/MWTapDetectingImageView.m
+Pods/MWPhotoBrowser/Pod/Classes/MWTapDetectingView.h
+Pods/MWPhotoBrowser/Pod/Classes/MWTapDetectingView.m
+Pods/MWPhotoBrowser/Pod/Classes/MWZoomingScrollView.h
+Pods/MWPhotoBrowser/Pod/Classes/MWZoomingScrollView.m
+Pods/MWPhotoBrowser/Pod/Classes/UIImage+MWPhotoBrowser.h
+Pods/MWPhotoBrowser/Pod/Classes/UIImage+MWPhotoBrowser.m
+Pods/Pods.xcodeproj/xcuserdata/denby.xcuserdatad/xcschemes/DACircularProgress.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/denby.xcuserdatad/xcschemes/MBProgressHUD.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/denby.xcuserdatad/xcschemes/MWPhotoBrowser-MWPhotoBrowser.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/denby.xcuserdatad/xcschemes/MWPhotoBrowser.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/denby.xcuserdatad/xcschemes/SDWebImage.xcscheme
+Pods/SDWebImage/LICENSE
+Pods/SDWebImage/README.md
+Pods/SDWebImage/SDWebImage/NSData+ImageContentType.h
+Pods/SDWebImage/SDWebImage/NSData+ImageContentType.m
+Pods/SDWebImage/SDWebImage/SDImageCache.h
+Pods/SDWebImage/SDWebImage/SDImageCache.m
+Pods/SDWebImage/SDWebImage/SDWebImageCompat.h
+Pods/SDWebImage/SDWebImage/SDWebImageCompat.m
+Pods/SDWebImage/SDWebImage/SDWebImageDecoder.h
+Pods/SDWebImage/SDWebImage/SDWebImageDecoder.m
+Pods/SDWebImage/SDWebImage/SDWebImageDownloader.h
+Pods/SDWebImage/SDWebImage/SDWebImageDownloader.m
+Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h
+Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.m
+Pods/SDWebImage/SDWebImage/SDWebImageManager.h
+Pods/SDWebImage/SDWebImage/SDWebImageManager.m
+Pods/SDWebImage/SDWebImage/SDWebImageOperation.h
+Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h
+Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.m
+Pods/SDWebImage/SDWebImage/UIButton+WebCache.h
+Pods/SDWebImage/SDWebImage/UIButton+WebCache.m
+Pods/SDWebImage/SDWebImage/UIImage+GIF.h
+Pods/SDWebImage/SDWebImage/UIImage+GIF.m
+Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.h
+Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.m
+Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h
+Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.m
+Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h
+Pods/SDWebImage/SDWebImage/UIImageView+WebCache.m
+Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.h
+Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.m
+Pods/Target Support Files/DACircularProgress/DACircularProgress-dummy.m
+Pods/Target Support Files/DACircularProgress/DACircularProgress-prefix.pch
+Pods/Target Support Files/DACircularProgress/DACircularProgress-umbrella.h
+Pods/Target Support Files/DACircularProgress/DACircularProgress.modulemap
+Pods/Target Support Files/DACircularProgress/DACircularProgress.xcconfig
