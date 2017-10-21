@@ -9,6 +9,8 @@
 import Foundation
 import Moya
 
+let BaseURL = "http://92.53.102.42:3000"
+
 enum ServerService {
     
     case listOfTask
@@ -30,7 +32,7 @@ extension ServerService: TargetType {
     }
     
     var baseURL: URL {
-        return URL(string: "http://92.53.102.42:3000")!
+        return URL(string: BaseURL)!
     }
     
     var path: String {

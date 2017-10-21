@@ -87,15 +87,28 @@ extension FeedController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 1 + self.news.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 195
+        if indexPath.row == 0 {
+            return 195
+        } else {
+            return UITableViewAutomaticDimension
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.taskCell(tableView: tableView, indexPath: indexPath)
+        if indexPath.row == 0 {
+            return self.taskCell(tableView: tableView, indexPath: indexPath)
+        } else {
+            let news = self.news[indexPath.row - 1]
+            if news.medias.count == 0 {
+                return self.news(tableView: tableView, indexPath: indexPath)
+            } else {
+                return self.newsWithMedia(tableView: tableView, indexPath: indexPath)
+            }
+        }
     }
     
 }
@@ -113,6 +126,21 @@ fileprivate extension FeedController {
         return cell
     }
     
+    func newsWithMedia(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: Cell.newsWithMedia.rawValue,
+            for: indexPath) as! NewsWithMediaCell
+        cell.set(news: self.news[indexPath.row - 1])
+        return cell
+    }
+    
+    func news(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: Cell.news.rawValue,
+            for: indexPath) as! NewsCell
+        return cell
+    }
+    
 }
 
 // MARK: -
@@ -122,6 +150,8 @@ fileprivate extension FeedController {
     
     enum Cell: String {
         case task = "TaskTableViewCell"
+        case newsWithMedia = "NewsWithMediaCell"
+        case news = "NewsCell"
     }
     
     enum Constant {

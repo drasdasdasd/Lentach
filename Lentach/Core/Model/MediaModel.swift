@@ -22,4 +22,12 @@ class MediaModel: Mappable {
         id <- map["id"]
     }
     
+    var mediaURL: String? {
+        if self.type == "video" {
+            return nil
+        } else {
+            return BaseURL + "/static/media/" + self.id
+        }
+    }
+    
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02DEC606F19F35295A224282645D399A"
+               BlueprintIdentifier = "AE4D9386AD949C3434BA08A69262F22F"
                BuildableName = "Pods_Lentach.framework"
                BlueprintName = "Pods-Lentach"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02DEC606F19F35295A224282645D399A"
+            BlueprintIdentifier = "AE4D9386AD949C3434BA08A69262F22F"
             BuildableName = "Pods_Lentach.framework"
             BlueprintName = "Pods-Lentach"
             ReferencedContainer = "container:Pods.xcodeproj">

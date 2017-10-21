@@ -22,6 +22,8 @@
 		B6DE05991F9BA57700638ACA /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE05981F9BA57700638ACA /* NewsModel.swift */; };
 		B6DE059B1F9BA63D00638ACA /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE059A1F9BA63D00638ACA /* MediaModel.swift */; };
 		B6DE059D1F9BA66800638ACA /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE059C1F9BA66800638ACA /* RatingModel.swift */; };
+		B6DE05A31F9BB8D300638ACA /* NewsWithMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE05A21F9BB8D300638ACA /* NewsWithMediaCell.swift */; };
+		B6DE05A51F9BBA4100638ACA /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE05A41F9BBA4100638ACA /* NewsCell.swift */; };
 		B6EC8FC81F9A7B5C00BA75E2 /* ServerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC8FC71F9A7B5C00BA75E2 /* ServerProvider.swift */; };
 		B6EC8FD11F9B5D7900BA75E2 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC8FD01F9B5D7900BA75E2 /* TaskTableViewCell.swift */; };
 		B6EC8FD41F9B60B600BA75E2 /* TaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC8FD31F9B60B600BA75E2 /* TaskCollectionViewCell.swift */; };
@@ -49,6 +51,8 @@
 		B6DE05981F9BA57700638ACA /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		B6DE059A1F9BA63D00638ACA /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		B6DE059C1F9BA66800638ACA /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
+		B6DE05A21F9BB8D300638ACA /* NewsWithMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWithMediaCell.swift; sourceTree = "<group>"; };
+		B6DE05A41F9BBA4100638ACA /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		B6EC8FC71F9A7B5C00BA75E2 /* ServerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProvider.swift; sourceTree = "<group>"; };
 		B6EC8FD01F9B5D7900BA75E2 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		B6EC8FD31F9B60B600BA75E2 /* TaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -180,17 +184,17 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		B6DE059E1F9BB44000638ACA /* Cell */ = {
+		B6DE059E1F9BB44000638ACA /* Layout */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Cell;
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		B6EC8FC01F9A7AED00BA75E2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B6DE059E1F9BB44000638ACA /* Cell */,
+				B6DE059E1F9BB44000638ACA /* Layout */,
 				B6EC8FC61F9A7B0B00BA75E2 /* Server */,
 				B6EC8FC21F9A7AF400BA75E2 /* Manager */,
 				B6EC8FC11F9A7AF100BA75E2 /* Model */,
@@ -275,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				B6EC8FD01F9B5D7900BA75E2 /* TaskTableViewCell.swift */,
+				B6DE05A21F9BB8D300638ACA /* NewsWithMediaCell.swift */,
+				B6DE05A41F9BBA4100638ACA /* NewsCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Lentach/Pods-Lentach-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -377,6 +384,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -432,7 +440,9 @@
 				B6EC8FC81F9A7B5C00BA75E2 /* ServerProvider.swift in Sources */,
 				B6DE058C1F9B935900638ACA /* EntryController.swift in Sources */,
 				B6DE059D1F9BA66800638ACA /* RatingModel.swift in Sources */,
+				B6DE05A51F9BBA4100638ACA /* NewsCell.swift in Sources */,
 				B6DE05951F9BA11A00638ACA /* TaskModel.swift in Sources */,
+				B6DE05A31F9BB8D300638ACA /* NewsWithMediaCell.swift in Sources */,
 				B693BB551F9A79B500784B54 /* FeedController.swift in Sources */,
 				B6DE05601F9B7ACE00638ACA /* StoryboardExtension.swift in Sources */,
 				B6DE05991F9BA57700638ACA /* NewsModel.swift in Sources */,
