@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import ObjectMapper
 
 class UserDefaultsManager {
 
@@ -15,8 +16,9 @@ class UserDefaultsManager {
         UserDefaults.standard.set(user, forKey: "user")
     }
     
-    func getUser() -> String? {
+    func getUser() -> UserModel? {
         if let user = UserDefaults.standard.object(forKey: "user") as? String {
+            let user = Mapper<UserModel>().map(JSONString: user)
             return user
         }
         return nil

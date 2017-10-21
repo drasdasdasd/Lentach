@@ -21,14 +21,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setupSVProgressHUD()
         
         let rootController: UIViewController!
-        rootController = UIStoryboard(storyboard: .entry).instantiateInitialViewController()
-        let navigationController = UINavigationController(rootViewController: rootController)
+        let navigationController: UINavigationController!
+        
+        if UserDefaultsManager().getUser() != nil {
+            rootController = UIStoryboard(storyboard: .feed).instantiateInitialViewController()
+            navigationController = UINavigationController(rootViewController: rootController)
+        } else {
+            rootController = UIStoryboard(storyboard: .entry).instantiateInitialViewController()
+            navigationController = UINavigationController(rootViewController: rootController)
+        }
+        
         navigationController.setNavigationBarHidden(true, animated: false)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
-        
         
         return true
     }

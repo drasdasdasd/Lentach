@@ -22,5 +22,11 @@ class NewsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
+    @IBAction func likeButtonAction(_ sender: Any) {
+    }
+    
+    @IBAction func disLikeButtonAction(_ sender: Any) {
+    }
+    
 }

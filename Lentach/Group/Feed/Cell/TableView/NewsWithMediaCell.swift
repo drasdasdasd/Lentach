@@ -38,11 +38,18 @@ class NewsWithMediaCell: UITableViewCell {
         
         if let url = media.mediaURL {
             self.mediaImageView.kf.setImage(with: URL(string: url))
-            print(url)
         } else {
             self.mediaImageView.image = #imageLiteral(resourceName: "mockVideo")
         }
         
     }
-
+    
+    @IBAction func likeButtonAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func disLikeButtonAction(_ sender: Any) {
+        
+    }
+    
 }

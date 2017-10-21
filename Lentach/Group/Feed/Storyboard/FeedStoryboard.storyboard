@@ -227,11 +227,21 @@
                                                                         <constraint firstAttribute="trailing" secondItem="c7G-Rl-JrK" secondAttribute="trailing" id="kvD-ln-8D1"/>
                                                                     </constraints>
                                                                 </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il2-VR-4El">
+                                                                    <rect key="frame" x="59" y="7.5" width="70" height="36"/>
+                                                                    <connections>
+                                                                        <action selector="likeButtonAction:" destination="rZa-YI-IXk" eventType="touchUpInside" id="baM-kj-Xin"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstItem="Is9-QF-ZED" firstAttribute="centerX" secondItem="ak8-nL-YzK" secondAttribute="centerX" id="Gsu-2j-UuX"/>
+                                                                <constraint firstItem="il2-VR-4El" firstAttribute="leading" secondItem="Is9-QF-ZED" secondAttribute="leading" id="Hr3-pn-Tgc"/>
                                                                 <constraint firstItem="Is9-QF-ZED" firstAttribute="centerY" secondItem="ak8-nL-YzK" secondAttribute="centerY" id="IPN-gx-sAo"/>
+                                                                <constraint firstItem="il2-VR-4El" firstAttribute="bottom" secondItem="Is9-QF-ZED" secondAttribute="bottom" id="UWh-ag-4If"/>
+                                                                <constraint firstItem="il2-VR-4El" firstAttribute="trailing" secondItem="Is9-QF-ZED" secondAttribute="trailing" id="VMR-Kj-VrR"/>
+                                                                <constraint firstItem="il2-VR-4El" firstAttribute="top" secondItem="Is9-QF-ZED" secondAttribute="top" id="ZNs-bF-dd4"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUx-WB-v1K">
@@ -265,10 +275,20 @@
                                                                         <constraint firstItem="0AX-2a-4KD" firstAttribute="leading" secondItem="Nv1-U9-9ty" secondAttribute="leading" id="yqr-dl-xsL"/>
                                                                     </constraints>
                                                                 </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdo-Lf-a2u">
+                                                                    <rect key="frame" x="58.5" y="7.5" width="70" height="36"/>
+                                                                    <connections>
+                                                                        <action selector="disLikeButtonAction:" destination="rZa-YI-IXk" eventType="touchUpInside" id="soZ-q6-SRR"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
+                                                                <constraint firstItem="tdo-Lf-a2u" firstAttribute="top" secondItem="Nv1-U9-9ty" secondAttribute="top" id="6pr-1s-7r0"/>
+                                                                <constraint firstItem="tdo-Lf-a2u" firstAttribute="trailing" secondItem="Nv1-U9-9ty" secondAttribute="trailing" id="9Sm-eD-IcX"/>
                                                                 <constraint firstItem="Nv1-U9-9ty" firstAttribute="centerX" secondItem="sUx-WB-v1K" secondAttribute="centerX" id="ADJ-A2-jZP"/>
+                                                                <constraint firstItem="tdo-Lf-a2u" firstAttribute="leading" secondItem="Nv1-U9-9ty" secondAttribute="leading" id="Lkv-Mt-TAq"/>
+                                                                <constraint firstItem="tdo-Lf-a2u" firstAttribute="bottom" secondItem="Nv1-U9-9ty" secondAttribute="bottom" id="eZM-tF-4JF"/>
                                                                 <constraint firstItem="Nv1-U9-9ty" firstAttribute="centerY" secondItem="sUx-WB-v1K" secondAttribute="centerY" id="wS2-zU-80J"/>
                                                             </constraints>
                                                         </view>
@@ -418,10 +438,20 @@
                                                                         <constraint firstItem="Af6-lI-BaT" firstAttribute="leading" secondItem="gRl-Ao-tql" secondAttribute="leading" id="x8Y-Lw-hDd"/>
                                                                     </constraints>
                                                                 </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-cg-WUK">
+                                                                    <rect key="frame" x="58" y="7.5" width="70" height="36"/>
+                                                                    <connections>
+                                                                        <action selector="likeButtonAction:" destination="Vwf-DI-tAO" eventType="touchUpInside" id="nX2-BP-ZHJ"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
+                                                                <constraint firstItem="GgW-cg-WUK" firstAttribute="trailing" secondItem="gRl-Ao-tql" secondAttribute="trailing" id="2cM-N2-cGx"/>
+                                                                <constraint firstItem="GgW-cg-WUK" firstAttribute="leading" secondItem="gRl-Ao-tql" secondAttribute="leading" id="H3M-z3-Mhq"/>
                                                                 <constraint firstItem="gRl-Ao-tql" firstAttribute="centerY" secondItem="sms-tB-0g1" secondAttribute="centerY" id="P9Q-vp-Q2F"/>
+                                                                <constraint firstItem="GgW-cg-WUK" firstAttribute="bottom" secondItem="gRl-Ao-tql" secondAttribute="bottom" id="U0u-PC-Nfs"/>
+                                                                <constraint firstItem="GgW-cg-WUK" firstAttribute="top" secondItem="gRl-Ao-tql" secondAttribute="top" id="VXW-IZ-6g4"/>
                                                                 <constraint firstItem="gRl-Ao-tql" firstAttribute="centerX" secondItem="sms-tB-0g1" secondAttribute="centerX" id="VuC-Ig-ICi"/>
                                                             </constraints>
                                                         </view>
@@ -456,11 +486,21 @@
                                                                         <constraint firstItem="tQR-PC-aGw" firstAttribute="leading" secondItem="igR-Fq-71B" secondAttribute="leading" id="uZU-a1-n5g"/>
                                                                     </constraints>
                                                                 </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpz-Jy-3fb">
+                                                                    <rect key="frame" x="58.5" y="7.5" width="70" height="36"/>
+                                                                    <connections>
+                                                                        <action selector="disLikeButtonAction:" destination="Vwf-DI-tAO" eventType="touchUpInside" id="BWC-IV-6NK"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
+                                                                <constraint firstItem="Kpz-Jy-3fb" firstAttribute="bottom" secondItem="igR-Fq-71B" secondAttribute="bottom" id="7gf-S1-HfU"/>
                                                                 <constraint firstItem="igR-Fq-71B" firstAttribute="centerX" secondItem="Kl6-YI-0wi" secondAttribute="centerX" id="9ZC-eD-DHs"/>
+                                                                <constraint firstItem="Kpz-Jy-3fb" firstAttribute="trailing" secondItem="igR-Fq-71B" secondAttribute="trailing" id="RNM-E0-Ej6"/>
                                                                 <constraint firstItem="igR-Fq-71B" firstAttribute="centerY" secondItem="Kl6-YI-0wi" secondAttribute="centerY" id="eAA-ID-w3e"/>
+                                                                <constraint firstItem="Kpz-Jy-3fb" firstAttribute="top" secondItem="igR-Fq-71B" secondAttribute="top" id="ndX-PO-qHf"/>
+                                                                <constraint firstItem="Kpz-Jy-3fb" firstAttribute="leading" secondItem="igR-Fq-71B" secondAttribute="leading" id="vUg-2Y-nZy"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
