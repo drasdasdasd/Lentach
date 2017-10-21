@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setupSVProgressHUD()
         
         let rootController: UIViewController!
-        rootController = UIStoryboard(storyboard: .feed).instantiateInitialViewController()
+        rootController = UIStoryboard(storyboard: .entry).instantiateInitialViewController()
         let navigationController = UINavigationController(rootViewController: rootController)
         navigationController.setNavigationBarHidden(true, animated: false)
         

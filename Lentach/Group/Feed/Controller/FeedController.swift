@@ -175,7 +175,13 @@ fileprivate extension FeedController {
             y: UIScreen.main.bounds.height - 110,
             width: buttonSize.width,
             height: buttonSize.height)
+        plusButton.addTarget(self, action: #selector(self.plusButtonAction(_:)), for: .touchDown)
         self.navigationController?.view.addSubview(plusButton)
+    }
+    
+    @objc func plusButtonAction(_ button: UIButton) {
+        let cameraController = UIStoryboard(storyboard: .camera).instantiateInitialViewController()
+        self.navigationController?.pushViewController(cameraController!, animated: true)
     }
     
 }

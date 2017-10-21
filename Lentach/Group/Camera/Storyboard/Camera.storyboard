@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tAa-UA-UAk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera Controller-->
+        <scene sceneID="3bF-aG-EGd">
+            <objects>
+                <viewController id="tAa-UA-UAk" customClass="CameraController" customModule="Lentach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rLv-6t-E9A"/>
+                        <viewControllerLayoutGuide type="bottom" id="fMy-tq-v5k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zeb-2a-lVX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCc-vq-N3E" customClass="SwiftyRecordButton" customModule="DemoSwiftyCam" customModuleProvider="target">
+                                <rect key="frame" x="150" y="572" width="75" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="AUq-d1-75B"/>
+                                    <constraint firstAttribute="height" constant="75" id="faX-D3-4se"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOk-CC-q4L">
+                                <rect key="frame" x="70" y="598" width="30" height="23"/>
+                                <state key="normal" image="flipCamera"/>
+                                <connections>
+                                    <action selector="cameraSwitchTapped:" destination="tAa-UA-UAk" eventType="touchUpInside" id="DhF-Px-N0E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUJ-0C-Mfi">
+                                <rect key="frame" x="275" y="594" width="18" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="oQ9-Ia-tPY"/>
+                                    <constraint firstAttribute="width" constant="18" id="wFT-3c-0fA"/>
+                                </constraints>
+                                <state key="normal" image="flashOutline"/>
+                                <connections>
+                                    <action selector="toggleFlashTapped:" destination="tAa-UA-UAk" eventType="touchUpInside" id="eTn-5O-nBC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JOk-CC-q4L" firstAttribute="centerY" secondItem="SCc-vq-N3E" secondAttribute="centerY" id="4oa-UA-rNF"/>
+                            <constraint firstItem="OUJ-0C-Mfi" firstAttribute="centerY" secondItem="SCc-vq-N3E" secondAttribute="centerY" id="bKw-lt-TcB"/>
+                            <constraint firstAttribute="bottom" secondItem="SCc-vq-N3E" secondAttribute="bottom" constant="20" symbolic="YES" id="kQX-ml-Ucs"/>
+                            <constraint firstItem="SCc-vq-N3E" firstAttribute="centerX" secondItem="Zeb-2a-lVX" secondAttribute="centerX" id="kiK-ZT-VkE"/>
+                            <constraint firstItem="SCc-vq-N3E" firstAttribute="leading" secondItem="JOk-CC-q4L" secondAttribute="trailing" constant="50" id="uYl-yy-XrU"/>
+                            <constraint firstItem="OUJ-0C-Mfi" firstAttribute="leading" secondItem="SCc-vq-N3E" secondAttribute="trailing" constant="50" id="wJV-RC-MtO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vdt-jy-a0O"/>
+                    </view>
+                    <connections>
+                        <outlet property="captureButton" destination="SCc-vq-N3E" id="PMJ-lt-yZR"/>
+                        <outlet property="flashButton" destination="OUJ-0C-Mfi" id="PFg-zq-Q5d"/>
+                        <outlet property="flipCameraButton" destination="JOk-CC-q4L" id="MIz-jb-YcN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ybb-eo-yss" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flashOutline" width="18" height="30"/>
+        <image name="flipCamera" width="30" height="23"/>
+    </resources>
+</document>

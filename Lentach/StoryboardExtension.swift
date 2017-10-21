@@ -21,6 +21,7 @@ enum Storyboard: String {
     case entry = "Entry"
     case bitcoin = "Bitcoin"
     case feed = "FeedStoryboard"
+    case camera = "Camera"
 
     var filename: String {
         return rawValue
