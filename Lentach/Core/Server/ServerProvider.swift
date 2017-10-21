@@ -17,7 +17,7 @@ enum ServerService {
     case setWallet(userId: String, bitcoin: String, token: String)
     case listOfTask
     case listOfNews
-    case vote(isUp: Bool, newsId: String, token: String)
+    case vote(isUp: Bool, newsId: String)
     
 }
 
@@ -36,7 +36,7 @@ extension ServerService: TargetType {
             return .requestParameters(
                 parameters: ["userId": userId, "value": bitcoin],
                 encoding: URLEncoding.default)
-        case .vote(_, let newsId, _):
+        case .vote(_, let newsId):
             return .requestParameters(
                 parameters: ["id": newsId],
                 encoding: URLEncoding.default)
@@ -67,7 +67,7 @@ extension ServerService: TargetType {
             return "/api/tasks"
         case .listOfNews:
             return "/api/news"
-        case .vote(let isUp, _, _):
+        case .vote(let isUp, _):
             if isUp {
                 return "/api/news/voteUp"
             } else {

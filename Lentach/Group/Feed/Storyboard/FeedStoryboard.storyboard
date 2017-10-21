@@ -438,8 +438,8 @@
                                                                         <constraint firstItem="Af6-lI-BaT" firstAttribute="leading" secondItem="gRl-Ao-tql" secondAttribute="leading" id="x8Y-Lw-hDd"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-cg-WUK">
-                                                                    <rect key="frame" x="58" y="7.5" width="70" height="36"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-cg-WUK">
+                                                                    <rect key="frame" x="59" y="7.5" width="70" height="36"/>
                                                                     <connections>
                                                                         <action selector="likeButtonAction:" destination="Vwf-DI-tAO" eventType="touchUpInside" id="nX2-BP-ZHJ"/>
                                                                     </connections>

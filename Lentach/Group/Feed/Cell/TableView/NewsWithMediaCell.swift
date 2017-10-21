@@ -23,6 +23,8 @@ class NewsWithMediaCell: UITableViewCell {
     
     var news: NewsModel!
     
+    var voteHandler: ((_ isVote: Bool, _ news: NewsModel) -> Void)!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -32,6 +34,14 @@ class NewsWithMediaCell: UITableViewCell {
         self.descriptionLabel.text = news.description
         self.countOfMedia.text = "\(news.medias.count)"
         self.updateImage(news: news)
+        
+        if !news.rating.isVoted {
+            self.likeLabel.text = ""
+            self.dislikeLabel.text = ""
+        } else {
+            self.likeLabel.text = "\(news.rating.up)"
+            self.dislikeLabel.text = "\(news.rating.down)"
+        }
     }
     
     func updateImage(news: NewsModel) {
@@ -48,11 +58,15 @@ class NewsWithMediaCell: UITableViewCell {
     }
     
     @IBAction func likeButtonAction(_ sender: Any) {
-        
+        if !news.rating.isVoted {
+            self.voteHandler(true, news)
+        }
     }
     
     @IBAction func disLikeButtonAction(_ sender: Any) {
-        
+        if !news.rating.isVoted {
+            self.voteHandler(false, news)
+        }
     }
     
 }

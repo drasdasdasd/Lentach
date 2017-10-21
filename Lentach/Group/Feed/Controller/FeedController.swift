@@ -93,8 +93,30 @@ fileprivate extension FeedController {
 // MARK: - Vote
 
 fileprivate extension FeedController {
-
     
+    func vote(isUp: Bool, news: NewsModel) {
+        SVProgressHUD.show()
+        self.provider.request(.vote(isUp: isUp, newsId: news.id)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let statusCode = moyaResponse.statusCode
+                if statusCode == 200 {
+                    news.rating.isVoted = true
+                    if isUp {
+                        news.rating.up += 1
+                    } else {
+                        news.rating.down += 1
+                    }
+                    self.tableView.reloadData()
+                    SVProgressHUD.dismiss()
+                } else {
+                    SVProgressHUD.showError(withStatus: "Ошибка")
+                }
+            case .failure(_):
+                SVProgressHUD.showError(withStatus: "Ошибка")
+            }
+        }
+    }
 
 }
 
@@ -158,6 +180,7 @@ fileprivate extension FeedController {
             withIdentifier: Cell.newsWithMedia.rawValue,
             for: indexPath) as! NewsWithMediaCell
         cell.set(news: self.news[indexPath.row - 1])
+        cell.voteHandler = { self.vote(isUp: $0, news: $1) }
         return cell
     }
     

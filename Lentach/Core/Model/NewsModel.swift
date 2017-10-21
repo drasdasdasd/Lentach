@@ -18,21 +18,18 @@ class NewsModel: Mappable {
     var id = ""
     var medias = [MediaModel]()
     var rating = RatingModel()
-    var isVoted = false
-    var isLiked = false
     
     required init?(map: Map) {}
     init() {}
     
     func mapping(map: Map) {
+        id <- map["id"]
         description <- map["description"]
         place <- map["place"]
         date <- map["lat"]
         userId <- map["userId"]
         medias <- map["mediaIds"]
         rating <- map["rating"]
-        isVoted <- map["isVoted"]
-        isLiked <- map["isLiked"]
     }
     
 }
