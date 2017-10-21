@@ -8,20 +8,16 @@
 
 import UIKit
 
-class CameraController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
+class CameraController: SwiftyCamViewController {
     
     @IBOutlet weak var captureButton: SwiftyRecordButton!
     @IBOutlet weak var flipCameraButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
-    
+    @IBOutlet weak var photoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cameraDelegate = self
-        maximumVideoDuration = 10.0
-        shouldUseDeviceOrientation = true
-        allowAutoRotate = true
-        audioEnabled = true
+        self.configure()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -30,17 +26,35 @@ class CameraController: SwiftyCamViewController, SwiftyCamViewControllerDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        captureButton.delegate = self
+        self.captureButton.delegate = self
     }
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didTake photo: UIImage) {
         // let newVC = PhotoViewController(image: photo)
        //  self.present(newVC, animated: true, completion: nil)
     }
+
+}
+
+// MARK: -
+// MARK: - My button action methods
+
+extension CameraController {
+    
+    @IBAction func textButtonAction(_ sender: Any) {
+        // code
+    }
+    
+}
+
+// MARK: -
+// MARK: - Cam methods
+
+extension CameraController: SwiftyCamViewControllerDelegate {
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didBeginRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did Begin Recording")
-        captureButton.growButton()
+        self.captureButton.growButton()
         UIView.animate(withDuration: 0.25, animations: {
             self.flashButton.alpha = 0.0
             self.flipCameraButton.alpha = 0.0
@@ -49,7 +63,7 @@ class CameraController: SwiftyCamViewController, SwiftyCamViewControllerDelegate
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did finish Recording")
-        captureButton.shrinkButton()
+        self.captureButton.shrinkButton()
         UIView.animate(withDuration: 0.25, animations: {
             self.flashButton.alpha = 1.0
             self.flipCameraButton.alpha = 1.0
@@ -57,7 +71,7 @@ class CameraController: SwiftyCamViewController, SwiftyCamViewControllerDelegate
     }
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
-       //  let newVC = VideoViewController(videoURL: url)
+        //  let newVC = VideoViewController(videoURL: url)
         // self.present(newVC, animated: true, completion: nil)
     }
     
@@ -93,16 +107,39 @@ class CameraController: SwiftyCamViewController, SwiftyCamViewControllerDelegate
     }
     
     @IBAction func cameraSwitchTapped(_ sender: Any) {
-        switchCamera()
+        self.switchCamera()
     }
     
     @IBAction func toggleFlashTapped(_ sender: Any) {
-        flashEnabled = !flashEnabled
+        self.flashEnabled = !self.flashEnabled
         
-        if flashEnabled == true {
-            flashButton.setImage(#imageLiteral(resourceName: "flash"), for: UIControlState())
+        if self.flashEnabled == true {
+            self.flashButton.setImage(#imageLiteral(resourceName: "flash"), for: UIControlState())
         } else {
-            flashButton.setImage(#imageLiteral(resourceName: "flashOutline"), for: UIControlState())
+            self.flashButton.setImage(#imageLiteral(resourceName: "flashOutline"), for: UIControlState())
         }
     }
+    
+}
+
+// MARK: -
+// MARK: - Configure
+
+fileprivate extension CameraController {
+    
+    func configure() {
+        self.cameraDelegate = self
+        self.maximumVideoDuration = 10.0
+        self.shouldUseDeviceOrientation = false
+        self.allowAutoRotate = false
+        self.audioEnabled = true
+        self.configurePhotoButton()
+    }
+    
+    func configurePhotoButton() {
+        self.photoButton.layer.cornerRadius = 15
+        self.photoButton.layer.borderWidth = 2
+        self.photoButton.layer.borderColor = UIColor.white.cgColor
+    }
+    
 }
