@@ -29,7 +29,7 @@ extension ServerService: TargetType {
         switch self {
         case .vkLogin(let token):
             return .requestParameters(
-                parameters: ["data": token],
+                parameters: ["access_token": token],
                 encoding: URLEncoding.default)
         case .setWallet(let userId, let bitcoin):
             return .requestParameters(
@@ -51,7 +51,7 @@ extension ServerService: TargetType {
     var path: String {
         switch self {
         case .vkLogin:
-            return "/api/users/auth"
+            return "/api/users/auth/token"
         case .setWallet:
             return "/api/users/setWallet"
         case .listOfTask:
