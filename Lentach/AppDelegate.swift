@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        self.setupSVProgressHUD()
+        
+        let rootController: UIViewController!
+        rootController = UIStoryboard(storyboard: .feed).instantiateInitialViewController()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = rootController
+        self.window?.makeKeyAndVisible()
+        
+        
         return true
+    }
+    
+    func setupSVProgressHUD() {
+        SVProgressHUD.setMinimumDismissTimeInterval(0.3)
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setDefaultAnimationType(.flat)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

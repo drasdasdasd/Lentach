@@ -7,14 +7,70 @@
 //
 
 import UIKit
+import Moya
+import SVProgressHUD
+import SwiftyJSON
+import ObjectMapper
 
 class FeedController: UIViewController {
 
+    // - UI
     @IBOutlet weak var tableView: UITableView!
+    
+    // - Data
+    fileprivate let provider = MoyaProvider<ServerService>()
+    fileprivate var tasks = [TaskModel]()
+    fileprivate var news = [NewsModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
+        self.getTasks()
+    }
+    
+}
+
+// MARK: -
+// MARK: - Get data
+
+fileprivate extension FeedController {
+    
+    func getTasks() {
+        self.provider.request(.listOfTask) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let statusCode = moyaResponse.statusCode
+                if statusCode == 200 {
+                    let json = JSON(moyaResponse.data).object
+                    if let tasks = Mapper<TaskModel>().mapArray(JSONObject: json) {
+                        self.tasks = tasks
+                    }
+                } else {
+                    SVProgressHUD.showError(withStatus: "Ошибка")
+                }
+            case .failure(_):
+                SVProgressHUD.showError(withStatus: "Ошибка")
+            }
+        }
+    }
+    
+    func getNews() {
+        self.provider.request(.listOfNews) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let statusCode = moyaResponse.statusCode
+                if statusCode == 200 {
+                    let json = JSON(moyaResponse.data).object
+                    if let news = Mapper<NewsModel>().mapArray(JSONObject: json) {
+                        self.news = news
+                    }
+                } else {
+                    SVProgressHUD.showError(withStatus: "Ошибка")
+                }
+            case .failure(_):
+                SVProgressHUD.showError(withStatus: "Ошибка")
+            }
+        }
     }
     
 }

@@ -12,6 +12,7 @@ import Moya
 enum ServerService {
     
     case listOfTask
+    case listOfNews
     
 }
 
@@ -36,12 +37,14 @@ extension ServerService: TargetType {
         switch self {
         case .listOfTask:
             return "/api/tasks"
+        case .listOfNews:
+            return "/api/news"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .listOfTask:
+        case .listOfTask, .listOfNews:
             return .get
         }
     }
@@ -55,14 +58,14 @@ extension ServerService: TargetType {
     
     var parameters: [String: Any]? {
         switch self {
-        case .listOfTask:
+        case .listOfTask, .listOfNews:
             return nil
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .listOfTask:
+        default:
             return URLEncoding.default
         }
     }

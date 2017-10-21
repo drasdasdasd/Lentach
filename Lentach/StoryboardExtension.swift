@@ -15,3 +15,15 @@ extension UIStoryboard {
     }
     
 }
+
+enum Storyboard: String {
+    
+    case entry = "Entry"
+    case bitcoin = "Bitcoin"
+    case feed = "FeedStoryboard"
+
+    var filename: String {
+        return rawValue
+    }
+    
+}

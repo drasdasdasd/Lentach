@@ -1,7 +1,106 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tO1-IQ-wJF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Bitcoin Controller-->
+        <scene sceneID="GZQ-0W-CYf">
+            <objects>
+                <viewController id="tO1-IQ-wJF" customClass="BitcoinController" customModule="Lentach" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VPI-TJ-J4p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wB8-b4-gjK">
+                                <rect key="frame" x="3" y="21.5" width="37" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="50S-na-v3C"/>
+                                    <constraint firstAttribute="height" constant="45" id="sDN-jT-kvc"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пропустить" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObB-up-fnb">
+                                <rect key="frame" x="273.5" y="35" width="86.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="textColor" red="0.59215686274509804" green="0.56862745098039214" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер биткоин-кошелька" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lld-VC-9Rn">
+                                <rect key="frame" x="15" y="76.5" width="345" height="81.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" red="0.19607843137254902" green="0.14901960784313725" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Uj-dp-byA">
+                                <rect key="frame" x="0.0" y="191" width="375" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Номер кошелька" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nuq-Dq-azY">
+                                        <rect key="frame" x="15" y="16.5" width="345" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nuq-Dq-azY" secondAttribute="trailing" constant="15" id="1oN-Xf-ejg"/>
+                                    <constraint firstAttribute="height" constant="50" id="8aZ-8E-2hJ"/>
+                                    <constraint firstItem="nuq-Dq-azY" firstAttribute="centerY" secondItem="6Uj-dp-byA" secondAttribute="centerY" id="EFq-Qg-hej"/>
+                                    <constraint firstItem="nuq-Dq-azY" firstAttribute="leading" secondItem="6Uj-dp-byA" secondAttribute="leading" constant="15" id="Ryx-vv-bWn"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fue-0C-8Vu">
+                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="C3n-Fq-nfB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Продолжить">
+                                    <color key="titleColor" red="1" green="0.99998795986175537" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="tO1-IQ-wJF" eventType="touchUpInside" id="Nrd-US-bFO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lld-VC-9Rn" firstAttribute="top" secondItem="wB8-b4-gjK" secondAttribute="bottom" constant="10" id="7fC-f3-vze"/>
+                            <constraint firstItem="0MZ-L2-I0a" firstAttribute="trailing" secondItem="Lld-VC-9Rn" secondAttribute="trailing" constant="15" id="ApM-SB-bTb"/>
+                            <constraint firstItem="6Uj-dp-byA" firstAttribute="leading" secondItem="0MZ-L2-I0a" secondAttribute="leading" id="IaA-4t-Atv"/>
+                            <constraint firstItem="0MZ-L2-I0a" firstAttribute="trailing" secondItem="ObB-up-fnb" secondAttribute="trailing" constant="15" id="Mc2-SD-whv"/>
+                            <constraint firstItem="wB8-b4-gjK" firstAttribute="leading" secondItem="0MZ-L2-I0a" secondAttribute="leading" constant="3" id="OlE-W6-EVU"/>
+                            <constraint firstItem="6Uj-dp-byA" firstAttribute="trailing" secondItem="0MZ-L2-I0a" secondAttribute="trailing" id="W5J-hE-SNe"/>
+                            <constraint firstItem="0MZ-L2-I0a" firstAttribute="trailing" secondItem="Fue-0C-8Vu" secondAttribute="trailing" id="ZeG-KM-EO3"/>
+                            <constraint firstItem="6Uj-dp-byA" firstAttribute="top" secondItem="Lld-VC-9Rn" secondAttribute="bottom" constant="33" id="bbk-G7-0VU"/>
+                            <constraint firstItem="wB8-b4-gjK" firstAttribute="centerY" secondItem="ObB-up-fnb" secondAttribute="centerY" id="bfp-s2-8pL"/>
+                            <constraint firstItem="0MZ-L2-I0a" firstAttribute="bottom" secondItem="Fue-0C-8Vu" secondAttribute="bottom" id="epo-Jg-faj"/>
+                            <constraint firstItem="ObB-up-fnb" firstAttribute="top" secondItem="VPI-TJ-J4p" secondAttribute="top" constant="35" id="kmS-b8-Qpa"/>
+                            <constraint firstItem="Lld-VC-9Rn" firstAttribute="leading" secondItem="0MZ-L2-I0a" secondAttribute="leading" constant="15" id="tgo-RY-Quq"/>
+                            <constraint firstItem="Fue-0C-8Vu" firstAttribute="leading" secondItem="0MZ-L2-I0a" secondAttribute="leading" id="u9M-5v-PIp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0MZ-L2-I0a"/>
+                    </view>
+                    <connections>
+                        <outlet property="nextButtonButtonConstraint" destination="epo-Jg-faj" id="afz-NB-Zpt"/>
+                        <outlet property="textField" destination="nuq-Dq-azY" id="mR4-e1-0VQ"/>
+                        <outlet property="textFieldBackgroundView" destination="6Uj-dp-byA" id="1gq-FP-gR9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z9c-Dr-UTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72.799999999999997" y="166.8665667166417"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backButton" width="8" height="14"/>
+    </resources>
 </document>

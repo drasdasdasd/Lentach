@@ -15,6 +15,7 @@ class TaskTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.collectionView.dataSource = self
+        self.collectionView.delegate = self
     }
 
 }
@@ -22,7 +23,7 @@ class TaskTableViewCell: UITableViewCell {
 // MARK: -
 // MARK: - Collection View data source
 
-extension TaskTableViewCell: UICollectionViewDataSource {
+extension TaskTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -40,6 +41,19 @@ extension TaskTableViewCell: UICollectionViewDataSource {
     }
     
 }
+
+// MARK: -
+// MARK: - Collection View data source
+
+extension TaskTableViewCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let celHeight = CGFloat(194)
+        return CGSize(width: collectionView.frame.size.width, height: celHeight)
+    }
+    
+}
+
 
 // MARK: -
 // MARK: - Constatn

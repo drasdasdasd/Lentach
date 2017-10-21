@@ -9,10 +9,19 @@
 /* Begin PBXBuildFile section */
 		B693BB531F9A79B500784B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693BB521F9A79B500784B54 /* AppDelegate.swift */; };
 		B693BB551F9A79B500784B54 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693BB541F9A79B500784B54 /* FeedController.swift */; };
-		B693BB581F9A79B500784B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693BB561F9A79B500784B54 /* Main.storyboard */; };
 		B693BB5A1F9A79B500784B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B693BB591F9A79B500784B54 /* Assets.xcassets */; };
 		B693BB5D1F9A79B500784B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693BB5B1F9A79B500784B54 /* LaunchScreen.storyboard */; };
-		B6B535D51F9B656A0069139B /* TaskCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B535D41F9B656A0069139B /* TaskCollectionViewLayout.swift */; };
+		B6DE055C1F9B7A5F00638ACA /* FeedStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DE055B1F9B7A5F00638ACA /* FeedStoryboard.storyboard */; };
+		B6DE05601F9B7ACE00638ACA /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE055F1F9B7ACE00638ACA /* StoryboardExtension.swift */; };
+		B6DE05871F9B912D00638ACA /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DE05861F9B912D00638ACA /* Entry.storyboard */; };
+		B6DE058C1F9B935900638ACA /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE058B1F9B935900638ACA /* EntryController.swift */; };
+		B6DE05911F9B93A900638ACA /* Bitcoin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DE05901F9B93A900638ACA /* Bitcoin.storyboard */; };
+		B6DE05931F9B93B300638ACA /* BitcoinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE05921F9B93B300638ACA /* BitcoinController.swift */; };
+		B6DE05951F9BA11A00638ACA /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE05941F9BA11A00638ACA /* TaskModel.swift */; };
+		B6DE05971F9BA28A00638ACA /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE05961F9BA28A00638ACA /* PlaceModel.swift */; };
+		B6DE05991F9BA57700638ACA /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE05981F9BA57700638ACA /* NewsModel.swift */; };
+		B6DE059B1F9BA63D00638ACA /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE059A1F9BA63D00638ACA /* MediaModel.swift */; };
+		B6DE059D1F9BA66800638ACA /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE059C1F9BA66800638ACA /* RatingModel.swift */; };
 		B6EC8FC81F9A7B5C00BA75E2 /* ServerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC8FC71F9A7B5C00BA75E2 /* ServerProvider.swift */; };
 		B6EC8FD11F9B5D7900BA75E2 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC8FD01F9B5D7900BA75E2 /* TaskTableViewCell.swift */; };
 		B6EC8FD41F9B60B600BA75E2 /* TaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC8FD31F9B60B600BA75E2 /* TaskCollectionViewCell.swift */; };
@@ -26,11 +35,20 @@
 		B693BB4F1F9A79B500784B54 /* Lentach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lentach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B693BB521F9A79B500784B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B693BB541F9A79B500784B54 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
-		B693BB571F9A79B500784B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B693BB591F9A79B500784B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B693BB5C1F9A79B500784B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B693BB5E1F9A79B500784B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6B535D41F9B656A0069139B /* TaskCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionViewLayout.swift; sourceTree = "<group>"; };
+		B6DE055B1F9B7A5F00638ACA /* FeedStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedStoryboard.storyboard; sourceTree = "<group>"; };
+		B6DE055F1F9B7ACE00638ACA /* StoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
+		B6DE05861F9B912D00638ACA /* Entry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
+		B6DE058B1F9B935900638ACA /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		B6DE05901F9B93A900638ACA /* Bitcoin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bitcoin.storyboard; sourceTree = "<group>"; };
+		B6DE05921F9B93B300638ACA /* BitcoinController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinController.swift; sourceTree = "<group>"; };
+		B6DE05941F9BA11A00638ACA /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		B6DE05961F9BA28A00638ACA /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		B6DE05981F9BA57700638ACA /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		B6DE059A1F9BA63D00638ACA /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
+		B6DE059C1F9BA66800638ACA /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
 		B6EC8FC71F9A7B5C00BA75E2 /* ServerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProvider.swift; sourceTree = "<group>"; };
 		B6EC8FD01F9B5D7900BA75E2 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		B6EC8FD31F9B60B600BA75E2 /* TaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +114,7 @@
 		B693BB651F9A79CF00784B54 /* LentachOther */ = {
 			isa = PBXGroup;
 			children = (
+				B6DE055F1F9B7ACE00638ACA /* StoryboardExtension.swift */,
 				B693BB521F9A79B500784B54 /* AppDelegate.swift */,
 				B693BB591F9A79B500784B54 /* Assets.xcassets */,
 				B693BB5B1F9A79B500784B54 /* LaunchScreen.storyboard */,
@@ -107,9 +126,58 @@
 		B6B535D31F9B65390069139B /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				B6B535D41F9B656A0069139B /* TaskCollectionViewLayout.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		B6DE05851F9B912200638ACA /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				B6DE05891F9B913700638ACA /* Controller */,
+				B6DE05881F9B913000638ACA /* Storyboard */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		B6DE05881F9B913000638ACA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B6DE05861F9B912D00638ACA /* Entry.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B6DE05891F9B913700638ACA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6DE058B1F9B935900638ACA /* EntryController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B6DE058D1F9B938E00638ACA /* Bitcoin */ = {
+			isa = PBXGroup;
+			children = (
+				B6DE058F1F9B939F00638ACA /* Storyboard */,
+				B6DE058E1F9B939B00638ACA /* Controller */,
+			);
+			path = Bitcoin;
+			sourceTree = "<group>";
+		};
+		B6DE058E1F9B939B00638ACA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6DE05921F9B93B300638ACA /* BitcoinController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B6DE058F1F9B939F00638ACA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B6DE05901F9B93A900638ACA /* Bitcoin.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		B6EC8FC01F9A7AED00BA75E2 /* Core */ = {
@@ -125,6 +193,11 @@
 		B6EC8FC11F9A7AF100BA75E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6DE05941F9BA11A00638ACA /* TaskModel.swift */,
+				B6DE05961F9BA28A00638ACA /* PlaceModel.swift */,
+				B6DE05981F9BA57700638ACA /* NewsModel.swift */,
+				B6DE059A1F9BA63D00638ACA /* MediaModel.swift */,
+				B6DE059C1F9BA66800638ACA /* RatingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +212,8 @@
 		B6EC8FC31F9A7AFA00BA75E2 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				B6DE058D1F9B938E00638ACA /* Bitcoin */,
+				B6DE05851F9B912200638ACA /* Entry */,
 				B6EC8FC41F9A7AFF00BA75E2 /* Feed */,
 			);
 			path = Group;
@@ -199,7 +274,7 @@
 		B6EC8FD21F9B5D8A00BA75E2 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				B693BB561F9A79B500784B54 /* Main.storyboard */,
+				B6DE055B1F9B7A5F00638ACA /* FeedStoryboard.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -266,9 +341,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DE05911F9B93A900638ACA /* Bitcoin.storyboard in Resources */,
 				B693BB5D1F9A79B500784B54 /* LaunchScreen.storyboard in Resources */,
+				B6DE05871F9B912D00638ACA /* Entry.storyboard in Resources */,
+				B6DE055C1F9B7A5F00638ACA /* FeedStoryboard.storyboard in Resources */,
 				B693BB5A1F9A79B500784B54 /* Assets.xcassets in Resources */,
-				B693BB581F9A79B500784B54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,13 +361,19 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Lentach/Pods-Lentach-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -339,9 +422,16 @@
 			files = (
 				B6EC8FD11F9B5D7900BA75E2 /* TaskTableViewCell.swift in Sources */,
 				B6EC8FC81F9A7B5C00BA75E2 /* ServerProvider.swift in Sources */,
+				B6DE058C1F9B935900638ACA /* EntryController.swift in Sources */,
+				B6DE059D1F9BA66800638ACA /* RatingModel.swift in Sources */,
+				B6DE05951F9BA11A00638ACA /* TaskModel.swift in Sources */,
 				B693BB551F9A79B500784B54 /* FeedController.swift in Sources */,
-				B6B535D51F9B656A0069139B /* TaskCollectionViewLayout.swift in Sources */,
+				B6DE05601F9B7ACE00638ACA /* StoryboardExtension.swift in Sources */,
+				B6DE05991F9BA57700638ACA /* NewsModel.swift in Sources */,
 				B6EC8FD41F9B60B600BA75E2 /* TaskCollectionViewCell.swift in Sources */,
+				B6DE059B1F9BA63D00638ACA /* MediaModel.swift in Sources */,
+				B6DE05971F9BA28A00638ACA /* PlaceModel.swift in Sources */,
+				B6DE05931F9B93B300638ACA /* BitcoinController.swift in Sources */,
 				B693BB531F9A79B500784B54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,14 +439,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B693BB561F9A79B500784B54 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B693BB571F9A79B500784B54 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B693BB5B1F9A79B500784B54 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -483,11 +565,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7K6W99SAJR;
 				INFOPLIST_FILE = Lentach/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DB.Lentach;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -499,11 +582,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7K6W99SAJR;
 				INFOPLIST_FILE = Lentach/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DB.Lentach;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

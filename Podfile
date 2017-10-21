@@ -8,5 +8,8 @@ target 'Lentach' do
   # Pods for Lentach
 
   pod 'Moya'
+  pod 'SVProgressHUD'
+  pod 'SwiftyJSON'
+  pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git’, :branch => ‘swift-4’
 
 end
