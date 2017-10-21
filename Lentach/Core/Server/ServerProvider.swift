@@ -13,6 +13,7 @@ let BaseURL = "http://92.53.102.42:3000"
 
 enum ServerService {
     
+    case vkLogin(token: String)
     case listOfTask
     case listOfNews
     
@@ -24,7 +25,12 @@ enum ServerService {
 extension ServerService: TargetType {
     
     var task: Task {
-        return .requestPlain
+        switch self {
+        case .vkLogin(let token):
+            return .requestParameters(parameters: ["data": token], encoding: URLEncoding.default)
+        default:
+            return .requestPlain
+        }
     }
     
     var headers: [String : String]? {
@@ -37,6 +43,8 @@ extension ServerService: TargetType {
     
     var path: String {
         switch self {
+        case .vkLogin:
+            return "/api/users/auth"
         case .listOfTask:
             return "/api/tasks"
         case .listOfNews:
@@ -48,6 +56,8 @@ extension ServerService: TargetType {
         switch self {
         case .listOfTask, .listOfNews:
             return .get
+        case .vkLogin:
+            return .post
         }
     }
     
@@ -58,15 +68,10 @@ extension ServerService: TargetType {
         }
     }
     
-    var parameters: [String: Any]? {
-        switch self {
-        case .listOfTask, .listOfNews:
-            return nil
-        }
-    }
-    
     var parameterEncoding: ParameterEncoding {
         switch self {
+        case .vkLogin:
+            return JSONEncoding.default
         default:
             return URLEncoding.default
         }

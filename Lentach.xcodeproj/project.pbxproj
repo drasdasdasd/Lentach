@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60A5BE41F9BDE980081F99B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A5BE31F9BDE970081F99B /* UserDefaultsManager.swift */; };
+		B60A5BE61F9BE0A70081F99B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A5BE51F9BE0A70081F99B /* UserModel.swift */; };
 		B693BB531F9A79B500784B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693BB521F9A79B500784B54 /* AppDelegate.swift */; };
 		B693BB551F9A79B500784B54 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693BB541F9A79B500784B54 /* FeedController.swift */; };
 		B693BB5A1F9A79B500784B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B693BB591F9A79B500784B54 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		27635981B54EE3D659AB72C6 /* Pods-Lentach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lentach.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lentach/Pods-Lentach.debug.xcconfig"; sourceTree = "<group>"; };
 		77A1771A85834F9614903EF9 /* Pods_Lentach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lentach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA1FFB273FB28A6C0BFB885 /* Pods-Lentach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lentach.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lentach/Pods-Lentach.release.xcconfig"; sourceTree = "<group>"; };
+		B60A5BE31F9BDE970081F99B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		B60A5BE51F9BE0A70081F99B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B693BB4F1F9A79B500784B54 /* Lentach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lentach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B693BB521F9A79B500784B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B693BB541F9A79B500784B54 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
@@ -270,6 +274,7 @@
 				B6DE05981F9BA57700638ACA /* NewsModel.swift */,
 				B6DE059A1F9BA63D00638ACA /* MediaModel.swift */,
 				B6DE059C1F9BA66800638ACA /* RatingModel.swift */,
+				B60A5BE51F9BE0A70081F99B /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 		B6EC8FC21F9A7AF400BA75E2 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				B60A5BE31F9BDE970081F99B /* UserDefaultsManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -286,8 +292,8 @@
 			children = (
 				B6DE05B31F9BD18500638ACA /* Camera */,
 				B6DE058D1F9B938E00638ACA /* Bitcoin */,
-				B6DE05851F9B912200638ACA /* Entry */,
 				B6EC8FC41F9A7AFF00BA75E2 /* Feed */,
+				B6DE05851F9B912200638ACA /* Entry */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/VK-ios-sdk/VK_ios_sdk.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -452,6 +459,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VK_ios_sdk.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -502,9 +510,11 @@
 				B6EC8FC81F9A7B5C00BA75E2 /* ServerProvider.swift in Sources */,
 				B6DE058C1F9B935900638ACA /* EntryController.swift in Sources */,
 				B6DE059D1F9BA66800638ACA /* RatingModel.swift in Sources */,
+				B60A5BE41F9BDE980081F99B /* UserDefaultsManager.swift in Sources */,
 				B6DE05BB1F9BD32800638ACA /* SwiftyRecordButton.swift in Sources */,
 				B6DE05A51F9BBA4100638ACA /* NewsCell.swift in Sources */,
 				B6DE05B21F9BD16500638ACA /* SwiftyCamViewControllerDelegate.swift in Sources */,
+				B60A5BE61F9BE0A70081F99B /* UserModel.swift in Sources */,
 				B6DE05951F9BA11A00638ACA /* TaskModel.swift in Sources */,
 				B6DE05A31F9BB8D300638ACA /* NewsWithMediaCell.swift in Sources */,
 				B693BB551F9A79B500784B54 /* FeedController.swift in Sources */,
@@ -651,7 +661,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7K6W99SAJR;
 				INFOPLIST_FILE = Lentach/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DB.Lentach;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -668,7 +678,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7K6W99SAJR;
 				INFOPLIST_FILE = Lentach/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DB.Lentach;
 				PRODUCT_NAME = "$(TARGET_NAME)";

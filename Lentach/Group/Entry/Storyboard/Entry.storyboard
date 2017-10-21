@@ -60,6 +60,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="vkLoginButtonAction:" destination="5Jc-ta-hjN" eventType="touchUpInside" id="t0I-Qd-4cg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idU-ki-auC">
                                 <rect key="frame" x="125.5" y="622" width="123" height="30"/>
@@ -67,6 +70,9 @@
                                 <state key="normal" title="Войти анонимно">
                                     <color key="titleColor" red="0.34509803921568627" green="0.16078431372549018" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="anonimButtonAction:" destination="5Jc-ta-hjN" eventType="touchUpInside" id="nEN-22-9AD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
