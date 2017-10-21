@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		B693BB531F9A79B500784B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693BB521F9A79B500784B54 /* AppDelegate.swift */; };
-		B693BB551F9A79B500784B54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693BB541F9A79B500784B54 /* ViewController.swift */; };
+		B693BB551F9A79B500784B54 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693BB541F9A79B500784B54 /* FeedController.swift */; };
 		B693BB581F9A79B500784B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693BB561F9A79B500784B54 /* Main.storyboard */; };
 		B693BB5A1F9A79B500784B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B693BB591F9A79B500784B54 /* Assets.xcassets */; };
 		B693BB5D1F9A79B500784B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693BB5B1F9A79B500784B54 /* LaunchScreen.storyboard */; };
+		B6EC8FC81F9A7B5C00BA75E2 /* ServerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC8FC71F9A7B5C00BA75E2 /* ServerProvider.swift */; };
+		E87E8B80E63624DB541C3CE3 /* Pods_Lentach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A1771A85834F9614903EF9 /* Pods_Lentach.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27635981B54EE3D659AB72C6 /* Pods-Lentach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lentach.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lentach/Pods-Lentach.debug.xcconfig"; sourceTree = "<group>"; };
+		77A1771A85834F9614903EF9 /* Pods_Lentach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lentach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEA1FFB273FB28A6C0BFB885 /* Pods-Lentach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lentach.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lentach/Pods-Lentach.release.xcconfig"; sourceTree = "<group>"; };
 		B693BB4F1F9A79B500784B54 /* Lentach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lentach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B693BB521F9A79B500784B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B693BB541F9A79B500784B54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B693BB541F9A79B500784B54 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		B693BB571F9A79B500784B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B693BB591F9A79B500784B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B693BB5C1F9A79B500784B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B693BB5E1F9A79B500784B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6EC8FC71F9A7B5C00BA75E2 /* ServerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E87E8B80E63624DB541C3CE3 /* Pods_Lentach.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BD8EFD0A2E7916ABA37E0ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				27635981B54EE3D659AB72C6 /* Pods-Lentach.debug.xcconfig */,
+				AEA1FFB273FB28A6C0BFB885 /* Pods-Lentach.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		63921CF56E3C0FCFFB871531 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77A1771A85834F9614903EF9 /* Pods_Lentach.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B693BB461F9A79B500784B54 = {
 			isa = PBXGroup;
 			children = (
 				B693BB511F9A79B500784B54 /* Lentach */,
 				B693BB501F9A79B500784B54 /* Products */,
+				3BD8EFD0A2E7916ABA37E0ED /* Pods */,
+				63921CF56E3C0FCFFB871531 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +80,79 @@
 		B693BB511F9A79B500784B54 /* Lentach */ = {
 			isa = PBXGroup;
 			children = (
+				B6EC8FC31F9A7AFA00BA75E2 /* Group */,
+				B6EC8FC01F9A7AED00BA75E2 /* Core */,
+				B693BB651F9A79CF00784B54 /* LentachOther */,
+			);
+			path = Lentach;
+			sourceTree = "<group>";
+		};
+		B693BB651F9A79CF00784B54 /* LentachOther */ = {
+			isa = PBXGroup;
+			children = (
 				B693BB521F9A79B500784B54 /* AppDelegate.swift */,
-				B693BB541F9A79B500784B54 /* ViewController.swift */,
 				B693BB561F9A79B500784B54 /* Main.storyboard */,
 				B693BB591F9A79B500784B54 /* Assets.xcassets */,
 				B693BB5B1F9A79B500784B54 /* LaunchScreen.storyboard */,
 				B693BB5E1F9A79B500784B54 /* Info.plist */,
 			);
-			path = Lentach;
+			name = LentachOther;
+			sourceTree = "<group>";
+		};
+		B6EC8FC01F9A7AED00BA75E2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B6EC8FC61F9A7B0B00BA75E2 /* Server */,
+				B6EC8FC21F9A7AF400BA75E2 /* Manager */,
+				B6EC8FC11F9A7AF100BA75E2 /* Model */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B6EC8FC11F9A7AF100BA75E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B6EC8FC21F9A7AF400BA75E2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B6EC8FC31F9A7AFA00BA75E2 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				B6EC8FC41F9A7AFF00BA75E2 /* Feed */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		B6EC8FC41F9A7AFF00BA75E2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				B6EC8FC51F9A7B0500BA75E2 /* Controller */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		B6EC8FC51F9A7B0500BA75E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B693BB541F9A79B500784B54 /* FeedController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B6EC8FC61F9A7B0B00BA75E2 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				B6EC8FC71F9A7B5C00BA75E2 /* ServerProvider.swift */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B693BB611F9A79B500784B54 /* Build configuration list for PBXNativeTarget "Lentach" */;
 			buildPhases = (
+				B68D089C5E62E663DC558B6E /* [CP] Check Pods Manifest.lock */,
 				B693BB4B1F9A79B500784B54 /* Sources */,
 				B693BB4C1F9A79B500784B54 /* Frameworks */,
 				B693BB4D1F9A79B500784B54 /* Resources */,
+				237AC3642961AD9D8C851054 /* [CP] Embed Pods Frameworks */,
+				3410C1C32E625E7B8DEBFFF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +225,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		237AC3642961AD9D8C851054 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lentach/Pods-Lentach-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lentach/Pods-Lentach-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3410C1C32E625E7B8DEBFFF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lentach/Pods-Lentach-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B68D089C5E62E663DC558B6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lentach-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B693BB4B1F9A79B500784B54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B693BB551F9A79B500784B54 /* ViewController.swift in Sources */,
+				B6EC8FC81F9A7B5C00BA75E2 /* ServerProvider.swift in Sources */,
+				B693BB551F9A79B500784B54 /* FeedController.swift in Sources */,
 				B693BB531F9A79B500784B54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +425,7 @@
 		};
 		B693BB621F9A79B500784B54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27635981B54EE3D659AB72C6 /* Pods-Lentach.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +440,7 @@
 		};
 		B693BB631F9A79B500784B54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEA1FFB273FB28A6C0BFB885 /* Pods-Lentach.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
