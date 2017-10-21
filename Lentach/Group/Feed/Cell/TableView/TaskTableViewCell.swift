@@ -15,6 +15,7 @@ class TaskTableViewCell: UITableViewCell {
     
     // - Data
     var tasks = [TaskModel]()
+    var pushTaskControllerHandler: ((_ task: TaskModel) -> Void)!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,6 +49,10 @@ extension TaskTableViewCell: UICollectionViewDataSource, UICollectionViewDelegat
             for: indexPath) as! TaskCollectionViewCell
         cell.set(task: self.tasks[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.pushTaskControllerHandler(self.tasks[indexPath.row])
     }
     
 }

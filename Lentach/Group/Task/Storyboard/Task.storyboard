@@ -63,11 +63,26 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openCameraButtonAction:" destination="2JC-52-8s3" eventType="touchUpInside" id="Bo2-Au-YkX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99j-yK-kIa">
+                                <rect key="frame" x="0.0" y="20" width="44" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jrH-Xb-ui9"/>
+                                    <constraint firstAttribute="width" constant="44" id="vrv-81-xlw"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="2JC-52-8s3" eventType="touchUpInside" id="UQd-Bo-beF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hZP-yj-lZM" firstAttribute="leading" secondItem="tys-7R-mqN" secondAttribute="leading" constant="15" id="4P9-bu-9ke"/>
+                            <constraint firstItem="99j-yK-kIa" firstAttribute="top" secondItem="tys-7R-mqN" secondAttribute="top" id="5Zb-AO-abJ"/>
                             <constraint firstItem="spH-aB-KLb" firstAttribute="leading" secondItem="qh7-Pu-9yt" secondAttribute="trailing" constant="15" id="7Qw-6Q-UGZ"/>
                             <constraint firstItem="tys-7R-mqN" firstAttribute="bottom" secondItem="EgY-Dj-Q5W" secondAttribute="bottom" constant="20" id="9iF-i3-4Tx"/>
                             <constraint firstItem="tys-7R-mqN" firstAttribute="trailing" secondItem="EgY-Dj-Q5W" secondAttribute="trailing" constant="15" id="Ebn-It-Va3"/>
@@ -81,15 +96,25 @@
                             <constraint firstItem="EgY-Dj-Q5W" firstAttribute="leading" secondItem="tys-7R-mqN" secondAttribute="leading" constant="15" id="RPK-rt-c7n"/>
                             <constraint firstItem="spH-aB-KLb" firstAttribute="centerY" secondItem="qh7-Pu-9yt" secondAttribute="centerY" id="W6h-ca-gVH"/>
                             <constraint firstItem="hZP-yj-lZM" firstAttribute="top" secondItem="qh7-Pu-9yt" secondAttribute="bottom" constant="12" id="YDM-St-Gzh"/>
+                            <constraint firstItem="99j-yK-kIa" firstAttribute="leading" secondItem="tys-7R-mqN" secondAttribute="leading" id="giT-5w-8Bl"/>
                             <constraint firstItem="WEt-9B-w9N" firstAttribute="top" secondItem="gXo-5e-M8W" secondAttribute="top" id="olc-JL-YQr"/>
                             <constraint firstItem="6FV-4o-Da5" firstAttribute="top" secondItem="WEt-9B-w9N" secondAttribute="bottom" constant="17" id="ssp-uo-jYA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tys-7R-mqN"/>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="spH-aB-KLb" id="rkG-de-9rc"/>
+                        <outlet property="descriptionLabel" destination="hZP-yj-lZM" id="4bh-Vw-LQu"/>
+                        <outlet property="priceLabel" destination="qh7-Pu-9yt" id="Ou2-lb-kPe"/>
+                        <outlet property="titleLabel" destination="6FV-4o-Da5" id="9sM-Y4-ynq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dg-XD-gFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-82.400000000000006" y="180.35982008995504"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backButton" width="8" height="14"/>
+    </resources>
 </document>

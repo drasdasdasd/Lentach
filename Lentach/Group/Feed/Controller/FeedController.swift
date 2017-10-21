@@ -154,9 +154,16 @@ extension FeedController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let news = self.news[indexPath.row - 1]
+}
+
+// MARK: -
+// MARK: - Push main controller
+
+fileprivate extension FeedController {
+    
+    func pusTaskController(task: TaskModel) {
         let controller = UIStoryboard(storyboard: .task).instantiateInitialViewController() as! TaskController
+        controller.task = task
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -172,6 +179,7 @@ fileprivate extension FeedController {
             withIdentifier: Cell.task.rawValue,
             for: indexPath) as! TaskTableViewCell
         cell.set(tasks: self.tasks)
+        cell.pushTaskControllerHandler = { self.pusTaskController(task: $0) }
         return cell
     }
     
@@ -188,6 +196,8 @@ fileprivate extension FeedController {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: Cell.news.rawValue,
             for: indexPath) as! NewsCell
+        cell.set(news: self.news[indexPath.row - 1])
+        cell.voteHandler = { self.vote(isUp: $0, news: $1) }
         return cell
     }
     

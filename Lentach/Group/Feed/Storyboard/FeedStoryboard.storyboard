@@ -536,6 +536,14 @@
                                                 <constraint firstAttribute="trailing" secondItem="XzN-e8-yTa" secondAttribute="trailing" constant="10" id="xzk-Lf-gOq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="XzN-e8-yTa" id="BSe-G4-mOF"/>
+                                            <outlet property="descriptionLabel" destination="mR0-b7-cvF" id="fG0-xo-4ig"/>
+                                            <outlet property="dislikeLabel" destination="HxV-Tl-jef" id="elB-Py-OuH"/>
+                                            <outlet property="likeLabel" destination="dOR-ej-HzC" id="WNd-1Z-EP2"/>
+                                            <outlet property="nameLabel" destination="HuN-Mo-usc" id="1hO-mn-Hrz"/>
+                                            <outlet property="photoImageView" destination="wEh-Ek-sl7" id="en3-om-YJJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

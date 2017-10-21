@@ -14,21 +14,41 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var mediaImageView: UIImageView!
     
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dislikeLabel: UILabel!
     
     var news: NewsModel!
+    var voteHandler: ((_ isVote: Bool, _ news: NewsModel) -> Void)!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    func set(news: NewsModel) {
+        self.news = news
+        self.descriptionLabel.text = news.description
+        
+        if !news.rating.isVoted {
+            self.likeLabel.text = ""
+            self.dislikeLabel.text = ""
+        } else {
+            self.likeLabel.text = "\(news.rating.up)"
+            self.dislikeLabel.text = "\(news.rating.down)"
+        }
+    }
+    
     @IBAction func likeButtonAction(_ sender: Any) {
+        if !news.rating.isVoted {
+            self.voteHandler(true, news)
+        }
     }
     
     @IBAction func disLikeButtonAction(_ sender: Any) {
+        if !news.rating.isVoted {
+            self.voteHandler(false, news)
+        }
     }
     
 }
