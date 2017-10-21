@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2JC-52-8s3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Task Controller-->
+        <scene sceneID="bzh-LB-tul">
+            <objects>
+                <viewController id="2JC-52-8s3" customClass="TaskController" customModule="Lentach" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gXo-5e-M8W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WEt-9B-w9N">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="236" id="KDP-UQ-58W"/>
+                                </constraints>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Снимите Навального" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FV-4o-Da5">
+                                <rect key="frame" x="15" y="253" width="345" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5000руб" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh7-Pu-9yt">
+                                <rect key="frame" x="15" y="288" width="65.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="до завтра" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spH-aB-KLb">
+                                <rect key="frame" x="95" y="290.5" width="57.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-yj-lZM">
+                                <rect key="frame" x="15" y="318" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-Dj-Q5W">
+                                <rect key="frame" x="15" y="597" width="345" height="50"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ski-Hs-2Iq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Снять материал">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hZP-yj-lZM" firstAttribute="leading" secondItem="tys-7R-mqN" secondAttribute="leading" constant="15" id="4P9-bu-9ke"/>
+                            <constraint firstItem="spH-aB-KLb" firstAttribute="leading" secondItem="qh7-Pu-9yt" secondAttribute="trailing" constant="15" id="7Qw-6Q-UGZ"/>
+                            <constraint firstItem="tys-7R-mqN" firstAttribute="bottom" secondItem="EgY-Dj-Q5W" secondAttribute="bottom" constant="20" id="9iF-i3-4Tx"/>
+                            <constraint firstItem="tys-7R-mqN" firstAttribute="trailing" secondItem="EgY-Dj-Q5W" secondAttribute="trailing" constant="15" id="Ebn-It-Va3"/>
+                            <constraint firstItem="WEt-9B-w9N" firstAttribute="leading" secondItem="tys-7R-mqN" secondAttribute="leading" id="Grd-0r-3Nh"/>
+                            <constraint firstItem="tys-7R-mqN" firstAttribute="trailing" secondItem="hZP-yj-lZM" secondAttribute="trailing" constant="15" id="HHc-Cf-TCw"/>
+                            <constraint firstItem="tys-7R-mqN" firstAttribute="trailing" secondItem="6FV-4o-Da5" secondAttribute="trailing" constant="15" id="Hdc-Hz-1X6"/>
+                            <constraint firstItem="6FV-4o-Da5" firstAttribute="leading" secondItem="tys-7R-mqN" secondAttribute="leading" constant="15" id="Ho6-5E-lok"/>
+                            <constraint firstItem="qh7-Pu-9yt" firstAttribute="leading" secondItem="6FV-4o-Da5" secondAttribute="leading" id="IGs-lU-FDY"/>
+                            <constraint firstItem="WEt-9B-w9N" firstAttribute="trailing" secondItem="tys-7R-mqN" secondAttribute="trailing" id="PNn-Bw-Yc5"/>
+                            <constraint firstItem="qh7-Pu-9yt" firstAttribute="top" secondItem="6FV-4o-Da5" secondAttribute="bottom" constant="7.5" id="RLe-VW-CBL"/>
+                            <constraint firstItem="EgY-Dj-Q5W" firstAttribute="leading" secondItem="tys-7R-mqN" secondAttribute="leading" constant="15" id="RPK-rt-c7n"/>
+                            <constraint firstItem="spH-aB-KLb" firstAttribute="centerY" secondItem="qh7-Pu-9yt" secondAttribute="centerY" id="W6h-ca-gVH"/>
+                            <constraint firstItem="hZP-yj-lZM" firstAttribute="top" secondItem="qh7-Pu-9yt" secondAttribute="bottom" constant="12" id="YDM-St-Gzh"/>
+                            <constraint firstItem="WEt-9B-w9N" firstAttribute="top" secondItem="gXo-5e-M8W" secondAttribute="top" id="olc-JL-YQr"/>
+                            <constraint firstItem="6FV-4o-Da5" firstAttribute="top" secondItem="WEt-9B-w9N" secondAttribute="bottom" constant="17" id="ssp-uo-jYA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tys-7R-mqN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dg-XD-gFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="180.35982008995504"/>
+        </scene>
+    </scenes>
+</document>

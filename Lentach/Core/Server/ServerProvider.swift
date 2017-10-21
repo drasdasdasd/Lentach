@@ -17,6 +17,7 @@ enum ServerService {
     case setWallet(userId: String, bitcoin: String, token: String)
     case listOfTask
     case listOfNews
+    case vote(isUp: Bool, newsId: String, token: String)
     
 }
 
@@ -35,6 +36,10 @@ extension ServerService: TargetType {
             return .requestParameters(
                 parameters: ["userId": userId, "value": bitcoin],
                 encoding: URLEncoding.default)
+        case .vote(_, let newsId, _):
+            return .requestParameters(
+                parameters: ["id": newsId],
+                encoding: URLEncoding.default)
         default:
             return .requestPlain
         }
@@ -42,8 +47,8 @@ extension ServerService: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .setWallet(_, _, let token):
-            return ["Authorization": token]
+        case .setWallet, .vote, .listOfNews:
+            return ["Authorization": UserDefaultsManager().getUser()?.token ?? ""]
         default: return nil
         }
     }
@@ -62,6 +67,12 @@ extension ServerService: TargetType {
             return "/api/tasks"
         case .listOfNews:
             return "/api/news"
+        case .vote(let isUp, _, _):
+            if isUp {
+                return "/api/news/voteUp"
+            } else {
+                return "/api/news/voteDown"
+            }
         }
     }
     
@@ -71,6 +82,8 @@ extension ServerService: TargetType {
             return .get
         case .vkLogin, .setWallet:
             return .post
+        case .vote:
+            return .put
         }
     }
     

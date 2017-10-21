@@ -18,6 +18,8 @@ class NewsModel: Mappable {
     var id = ""
     var medias = [MediaModel]()
     var rating = RatingModel()
+    var isVoted = false
+    var isLiked = false
     
     required init?(map: Map) {}
     init() {}
@@ -29,6 +31,8 @@ class NewsModel: Mappable {
         userId <- map["userId"]
         medias <- map["mediaIds"]
         rating <- map["rating"]
+        isVoted <- map["isVoted"]
+        isLiked <- map["isLiked"]
     }
     
 }

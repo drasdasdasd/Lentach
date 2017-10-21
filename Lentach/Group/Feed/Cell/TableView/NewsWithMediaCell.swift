@@ -21,11 +21,14 @@ class NewsWithMediaCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dislikeLabel: UILabel!
     
+    var news: NewsModel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func set(news: NewsModel) {
+        self.news = news
         self.descriptionLabel.text = news.description
         self.countOfMedia.text = "\(news.medias.count)"
         self.updateImage(news: news)

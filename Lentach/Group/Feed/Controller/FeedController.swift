@@ -16,16 +16,28 @@ class FeedController: UIViewController {
 
     // - UI
     @IBOutlet weak var tableView: UITableView!
+    fileprivate var plusButton: UIButton!
     
     // - Data
     fileprivate let provider = MoyaProvider<ServerService>()
     fileprivate var tasks = [TaskModel]()
     fileprivate var news = [NewsModel]()
+    fileprivate var user = UserDefaultsManager().getUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
         self.getTasks()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.addPlusButton()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.plusButton.removeFromSuperview()
     }
     
 }
@@ -63,7 +75,7 @@ fileprivate extension FeedController {
                 if statusCode == 200 {
                     let json = JSON(moyaResponse.data).object
                     if let news = Mapper<NewsModel>().mapArray(JSONObject: json) {
-                        self.news = news
+                        self.news = news.reversed()
                         self.tableView.reloadData()
                     }
                 } else {
@@ -75,6 +87,15 @@ fileprivate extension FeedController {
         }
     }
     
+}
+
+// MARK: -
+// MARK: - Vote
+
+fileprivate extension FeedController {
+
+    
+
 }
 
 // MARK: -
@@ -109,6 +130,12 @@ extension FeedController: UITableViewDataSource, UITableViewDelegate {
                 return self.newsWithMedia(tableView: tableView, indexPath: indexPath)
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let news = self.news[indexPath.row - 1]
+        let controller = UIStoryboard(storyboard: .task).instantiateInitialViewController() as! TaskController
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }
@@ -159,7 +186,6 @@ fileprivate extension FeedController {
     }
     
     func configure() {
-        self.addPlusButton()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 150
@@ -168,7 +194,7 @@ fileprivate extension FeedController {
         
     func addPlusButton() {
         let buttonSize = CGSize(width: 121, height: 116)
-        let plusButton = UIButton()
+        plusButton = UIButton()
         plusButton.setImage(#imageLiteral(resourceName: "plusButton"), for: .normal)
         plusButton.frame = CGRect(
             x: (UIScreen.main.bounds.width - buttonSize.width) / 2,

@@ -18,6 +18,8 @@ class NewsCell: UITableViewCell {
     
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dislikeLabel: UILabel!
+    
+    var news: NewsModel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
