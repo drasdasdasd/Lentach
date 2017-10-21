@@ -7,19 +7,73 @@
 //
 
 import UIKit
+import Moya
+import SVProgressHUD
 
 class BitcoinController: UIViewController {
 
+    // - UI
     @IBOutlet weak var textFieldBackgroundView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var nextButtonButtonConstraint: NSLayoutConstraint!
+    
+    // - Data
+    fileprivate let provider = MoyaProvider<ServerService>()
+    var userId: String!
+    var accessToken: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
     }
     
+    @IBAction func skipButtonAction(_ sender: Any) {
+        self.pushFeed()
+    }
+    
     @IBAction func nextButtonAction(_ sender: Any) {
+        self.sendBitcoin(bitcoin: textField.text ?? "")
+    }
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+// MARK: -
+// MARK: - Server methods
+
+fileprivate extension BitcoinController {
+    
+    func sendBitcoin(bitcoin: String) {
+        SVProgressHUD.show()
+        self.provider.request(.setWallet(userId: self.userId, bitcoin: bitcoin, token: self.accessToken)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let statusCode = moyaResponse.statusCode
+                if statusCode == 200 {
+                    self.pushFeed()
+                    SVProgressHUD.dismiss()
+                } else {
+                    SVProgressHUD.showError(withStatus: "Ошибка")
+                }
+            case .failure(_):
+                SVProgressHUD.showError(withStatus: "Ошибка")
+            }
+        }
+    }
+    
+}
+
+// MARK: -
+// MARK: - Push
+
+fileprivate extension BitcoinController {
+   
+    func pushFeed() {
+        let controller = UIStoryboard(storyboard: .feed).instantiateInitialViewController()
+        self.navigationController?.pushViewController(controller!, animated: true)
     }
     
 }

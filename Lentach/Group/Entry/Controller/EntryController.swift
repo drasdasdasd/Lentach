@@ -11,6 +11,7 @@ import VK_ios_sdk
 import SVProgressHUD
 import Moya
 import SwiftyJSON
+import ObjectMapper
 
 class EntryController: UIViewController {
     
@@ -36,6 +37,7 @@ class EntryController: UIViewController {
     }
     
     @IBAction func anonimButtonAction(_ sender: Any) {
+        self.pushFeed()
     }
     
 }
@@ -51,8 +53,20 @@ fileprivate extension EntryController {
             case let .success(moyaResponse):
                 let statusCode = moyaResponse.statusCode
                 if statusCode == 200 {
-                    let json = JSON(moyaResponse.data).object
-                    print(json)
+                    // - Map
+                    let json = JSON(moyaResponse.data).dictionary
+                    let userJSON = json!["response"]!.object
+                    let user = Mapper<UserModel>().map(JSON: userJSON as! [String : Any])
+                    
+                    // - Save
+                    UserDefaultsManager().save(user: user?.toJSONString() ?? "")
+                    
+                    // - Push
+                    let bitController = UIStoryboard(storyboard: .bitcoin).instantiateInitialViewController() as! BitcoinController
+                    bitController.userId = user?.id ?? ""
+                    bitController.accessToken = user?.token ?? ""
+                    self.navigationController?.pushViewController(bitController, animated: true)
+                    
                 } else {
                     SVProgressHUD.showError(withStatus: "Ошибка")
                 }
@@ -60,6 +74,18 @@ fileprivate extension EntryController {
                 SVProgressHUD.showError(withStatus: "Ошибка")
             }
         }
+    }
+    
+}
+
+// MARK: -
+// MARK: - Push
+
+fileprivate extension EntryController {
+    
+    func pushFeed() {
+        let controller = UIStoryboard(storyboard: .feed).instantiateInitialViewController()
+        self.navigationController?.pushViewController(controller!, animated: true)
     }
     
 }

@@ -25,13 +25,10 @@
                                     <constraint firstAttribute="height" constant="45" id="sDN-jT-kvc"/>
                                 </constraints>
                                 <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="tO1-IQ-wJF" eventType="touchUpInside" id="ehN-X5-emb"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пропустить" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObB-up-fnb">
-                                <rect key="frame" x="273.5" y="35" width="86.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <color key="textColor" red="0.59215686274509804" green="0.56862745098039214" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер биткоин-кошелька" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lld-VC-9Rn">
                                 <rect key="frame" x="15" y="76.5" width="345" height="81.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
@@ -70,20 +67,34 @@
                                     <action selector="nextButtonAction:" destination="tO1-IQ-wJF" eventType="touchUpInside" id="Nrd-US-bFO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-9A-4fo">
+                                <rect key="frame" x="259" y="35" width="100" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="HfB-Fq-HFS"/>
+                                    <constraint firstAttribute="height" constant="18" id="jEL-33-bqT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Пропустить">
+                                    <color key="titleColor" red="0.59215686274509804" green="0.56862745098039214" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipButtonAction:" destination="tO1-IQ-wJF" eventType="touchUpInside" id="tc0-OC-cWq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Lld-VC-9Rn" firstAttribute="top" secondItem="wB8-b4-gjK" secondAttribute="bottom" constant="10" id="7fC-f3-vze"/>
+                            <constraint firstItem="4Tc-9A-4fo" firstAttribute="top" secondItem="0MZ-L2-I0a" secondAttribute="top" constant="15" id="7kY-fG-CNu"/>
                             <constraint firstItem="0MZ-L2-I0a" firstAttribute="trailing" secondItem="Lld-VC-9Rn" secondAttribute="trailing" constant="15" id="ApM-SB-bTb"/>
                             <constraint firstItem="6Uj-dp-byA" firstAttribute="leading" secondItem="0MZ-L2-I0a" secondAttribute="leading" id="IaA-4t-Atv"/>
-                            <constraint firstItem="0MZ-L2-I0a" firstAttribute="trailing" secondItem="ObB-up-fnb" secondAttribute="trailing" constant="15" id="Mc2-SD-whv"/>
                             <constraint firstItem="wB8-b4-gjK" firstAttribute="leading" secondItem="0MZ-L2-I0a" secondAttribute="leading" constant="3" id="OlE-W6-EVU"/>
+                            <constraint firstItem="0MZ-L2-I0a" firstAttribute="trailing" secondItem="4Tc-9A-4fo" secondAttribute="trailing" constant="16" id="T7d-UC-Ro8"/>
                             <constraint firstItem="6Uj-dp-byA" firstAttribute="trailing" secondItem="0MZ-L2-I0a" secondAttribute="trailing" id="W5J-hE-SNe"/>
                             <constraint firstItem="0MZ-L2-I0a" firstAttribute="trailing" secondItem="Fue-0C-8Vu" secondAttribute="trailing" id="ZeG-KM-EO3"/>
                             <constraint firstItem="6Uj-dp-byA" firstAttribute="top" secondItem="Lld-VC-9Rn" secondAttribute="bottom" constant="33" id="bbk-G7-0VU"/>
-                            <constraint firstItem="wB8-b4-gjK" firstAttribute="centerY" secondItem="ObB-up-fnb" secondAttribute="centerY" id="bfp-s2-8pL"/>
                             <constraint firstItem="0MZ-L2-I0a" firstAttribute="bottom" secondItem="Fue-0C-8Vu" secondAttribute="bottom" id="epo-Jg-faj"/>
-                            <constraint firstItem="ObB-up-fnb" firstAttribute="top" secondItem="VPI-TJ-J4p" secondAttribute="top" constant="35" id="kmS-b8-Qpa"/>
+                            <constraint firstItem="Lld-VC-9Rn" firstAttribute="top" secondItem="4Tc-9A-4fo" secondAttribute="bottom" constant="23.5" id="okM-1j-gLN"/>
                             <constraint firstItem="Lld-VC-9Rn" firstAttribute="leading" secondItem="0MZ-L2-I0a" secondAttribute="leading" constant="15" id="tgo-RY-Quq"/>
                             <constraint firstItem="Fue-0C-8Vu" firstAttribute="leading" secondItem="0MZ-L2-I0a" secondAttribute="leading" id="u9M-5v-PIp"/>
                         </constraints>

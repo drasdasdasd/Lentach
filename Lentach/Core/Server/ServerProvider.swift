@@ -14,7 +14,7 @@ let BaseURL = "http://92.53.102.42:3000"
 enum ServerService {
     
     case vkLogin(token: String)
-    case setWallet(userId: String, bitcoin: String)
+    case setWallet(userId: String, bitcoin: String, token: String)
     case listOfTask
     case listOfNews
     
@@ -31,7 +31,7 @@ extension ServerService: TargetType {
             return .requestParameters(
                 parameters: ["access_token": token],
                 encoding: URLEncoding.default)
-        case .setWallet(let userId, let bitcoin):
+        case .setWallet(let userId, let bitcoin, _):
             return .requestParameters(
                 parameters: ["userId": userId, "value": bitcoin],
                 encoding: URLEncoding.default)
@@ -41,7 +41,11 @@ extension ServerService: TargetType {
     }
     
     var headers: [String : String]? {
-        return nil
+        switch self {
+        case .setWallet(_, _, let token):
+            return ["Authorization": token]
+        default: return nil
+        }
     }
     
     var baseURL: URL {

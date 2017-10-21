@@ -19,6 +19,7 @@ class UserModel: Mappable {
     var btcWallet = ""
     var vkId = ""
     var id = ""
+    var token = ""
     
     required init?(map: Map) {}
     init() {}
@@ -32,6 +33,7 @@ class UserModel: Mappable {
         btcWallet <- map["btc_wallet"]
         vkId <- map["username"]
         id <- map["id"]
+        token <- map["accessToken"]
     }
     
 }
