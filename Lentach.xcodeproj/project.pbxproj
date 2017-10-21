@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B60A5BE41F9BDE980081F99B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A5BE31F9BDE970081F99B /* UserDefaultsManager.swift */; };
 		B60A5BE61F9BE0A70081F99B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A5BE51F9BE0A70081F99B /* UserModel.swift */; };
+		B60A5BEB1F9BE9410081F99B /* Description.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60A5BEA1F9BE9410081F99B /* Description.storyboard */; };
+		B60A5BED1F9BE94D0081F99B /* DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A5BEC1F9BE94D0081F99B /* DescriptionController.swift */; };
 		B693BB531F9A79B500784B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693BB521F9A79B500784B54 /* AppDelegate.swift */; };
 		B693BB551F9A79B500784B54 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693BB541F9A79B500784B54 /* FeedController.swift */; };
 		B693BB5A1F9A79B500784B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B693BB591F9A79B500784B54 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		AEA1FFB273FB28A6C0BFB885 /* Pods-Lentach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lentach.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lentach/Pods-Lentach.release.xcconfig"; sourceTree = "<group>"; };
 		B60A5BE31F9BDE970081F99B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B60A5BE51F9BE0A70081F99B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B60A5BEA1F9BE9410081F99B /* Description.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Description.storyboard; sourceTree = "<group>"; };
+		B60A5BEC1F9BE94D0081F99B /* DescriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionController.swift; sourceTree = "<group>"; };
 		B693BB4F1F9A79B500784B54 /* Lentach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lentach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B693BB521F9A79B500784B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B693BB541F9A79B500784B54 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,31 @@
 				77A1771A85834F9614903EF9 /* Pods_Lentach.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B60A5BE71F9BE90A0081F99B /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				B60A5BE91F9BE9330081F99B /* Storyboard */,
+				B60A5BE81F9BE92E0081F99B /* Controller */,
+			);
+			path = Description;
+			sourceTree = "<group>";
+		};
+		B60A5BE81F9BE92E0081F99B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B60A5BEC1F9BE94D0081F99B /* DescriptionController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B60A5BE91F9BE9330081F99B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B60A5BEA1F9BE9410081F99B /* Description.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		B693BB461F9A79B500784B54 = {
@@ -290,6 +319,7 @@
 		B6EC8FC31F9A7AFA00BA75E2 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				B60A5BE71F9BE90A0081F99B /* Description */,
 				B6DE05B31F9BD18500638ACA /* Camera */,
 				B6DE058D1F9B938E00638ACA /* Bitcoin */,
 				B6EC8FC41F9A7AFF00BA75E2 /* Feed */,
@@ -426,6 +456,7 @@
 				B6DE05B91F9BD1AD00638ACA /* Camera.storyboard in Resources */,
 				B693BB5D1F9A79B500784B54 /* LaunchScreen.storyboard in Resources */,
 				B6DE05871F9B912D00638ACA /* Entry.storyboard in Resources */,
+				B60A5BEB1F9BE9410081F99B /* Description.storyboard in Resources */,
 				B6DE055C1F9B7A5F00638ACA /* FeedStoryboard.storyboard in Resources */,
 				B693BB5A1F9A79B500784B54 /* Assets.xcassets in Resources */,
 			);
@@ -520,6 +551,7 @@
 				B693BB551F9A79B500784B54 /* FeedController.swift in Sources */,
 				B6DE05601F9B7ACE00638ACA /* StoryboardExtension.swift in Sources */,
 				B6DE05AF1F9BD16500638ACA /* PreviewView.swift in Sources */,
+				B60A5BED1F9BE94D0081F99B /* DescriptionController.swift in Sources */,
 				B6DE05991F9BA57700638ACA /* NewsModel.swift in Sources */,
 				B6DE05B01F9BD16500638ACA /* SwiftyCamButton.swift in Sources */,
 				B6EC8FD41F9B60B600BA75E2 /* TaskCollectionViewCell.swift in Sources */,
