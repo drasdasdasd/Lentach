@@ -24,6 +24,7 @@ enum Storyboard: String {
     case camera = "Camera"
     case task = "Task"
     case newsAdded = "NewsAdded"
+    case chooseLocation = "ChooseLocation"
 
     var filename: String {
         return rawValue

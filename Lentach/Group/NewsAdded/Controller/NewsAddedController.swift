@@ -15,6 +15,7 @@ import SwiftyJSON
 class NewsAddedController: UIViewController {
     
     // - UI
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var firstViewTopConstraint: NSLayoutConstraint!
@@ -39,6 +40,16 @@ class NewsAddedController: UIViewController {
     
     @IBAction func sendButtonAction(_ sender: Any) {
         self.sendAssets()
+    }
+    
+    @IBAction func addLocationAction(_ sender: Any) {
+        let locationController = UIStoryboard(storyboard: .chooseLocation).instantiateInitialViewController() as! ChooseLocationController
+        locationController.locationHandler = { self.update(address: $0) }
+        self.navigationController?.pushViewController(locationController, animated: true)
+    }
+    
+    func update(address: String) {
+        self.addressLabel.text = address
     }
     
     func dismiss() {

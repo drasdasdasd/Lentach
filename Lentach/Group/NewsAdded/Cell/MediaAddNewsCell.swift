@@ -33,16 +33,19 @@ class MediaAddNewsCell: UICollectionViewCell {
                 self.photoImageView.image = result!
                 self.configure(view: self.photoImageView)
             })
+        } else {
+            self.photoImageView.image = #imageLiteral(resourceName: "cameraMock")
+            self.configure(view: self.photoImageView)
         }
     }
     
     func configure(view: UIView) {
-        view.layer.masksToBounds = true
         view.backgroundColor = UIColor.white
         view.layer.cornerRadius = 5
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
         view.layer.shadowRadius = 10
         view.layer.shadowOpacity = 1
+        view.clipsToBounds = true
         view.layer.shadowColor = UIColor(white: 0, alpha: 0.1).cgColor
     }
     
