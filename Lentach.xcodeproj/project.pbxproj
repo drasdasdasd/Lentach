@@ -18,9 +18,10 @@
 		B6A730761F9C10F600FC17E0 /* MediaCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A730751F9C10F600FC17E0 /* MediaCreator.swift */; };
 		B6A7307B1F9C159900FC17E0 /* NewsAddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7307A1F9C159900FC17E0 /* NewsAddedController.swift */; };
 		B6A7307D1F9C15A100FC17E0 /* NewsAdded.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6A7307C1F9C15A100FC17E0 /* NewsAdded.storyboard */; };
-		B6A730801F9C199B00FC17E0 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7307F1F9C199B00FC17E0 /* CameraHandler.swift */; };
 		B6A730831F9C1B9200FC17E0 /* MediaAddNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A730821F9C1B9200FC17E0 /* MediaAddNewsCell.swift */; };
 		B6A730851F9C1B9E00FC17E0 /* PlusAddNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A730841F9C1B9E00FC17E0 /* PlusAddNewsCell.swift */; };
+		B6BE93B41F9C2C0D00C4EEC2 /* AssetsPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BE93B21F9C2C0D00C4EEC2 /* AssetsPickerController.swift */; };
+		B6BE93B51F9C2C0D00C4EEC2 /* AssetsPickerGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BE93B31F9C2C0D00C4EEC2 /* AssetsPickerGridController.swift */; };
 		B6DE055C1F9B7A5F00638ACA /* FeedStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DE055B1F9B7A5F00638ACA /* FeedStoryboard.storyboard */; };
 		B6DE05601F9B7ACE00638ACA /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE055F1F9B7ACE00638ACA /* StoryboardExtension.swift */; };
 		B6DE05871F9B912D00638ACA /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DE05861F9B912D00638ACA /* Entry.storyboard */; };
@@ -64,9 +65,10 @@
 		B6A730751F9C10F600FC17E0 /* MediaCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCreator.swift; sourceTree = "<group>"; };
 		B6A7307A1F9C159900FC17E0 /* NewsAddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAddedController.swift; sourceTree = "<group>"; };
 		B6A7307C1F9C15A100FC17E0 /* NewsAdded.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsAdded.storyboard; sourceTree = "<group>"; };
-		B6A7307F1F9C199B00FC17E0 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		B6A730821F9C1B9200FC17E0 /* MediaAddNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAddNewsCell.swift; sourceTree = "<group>"; };
 		B6A730841F9C1B9E00FC17E0 /* PlusAddNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusAddNewsCell.swift; sourceTree = "<group>"; };
+		B6BE93B21F9C2C0D00C4EEC2 /* AssetsPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPickerController.swift; sourceTree = "<group>"; };
+		B6BE93B31F9C2C0D00C4EEC2 /* AssetsPickerGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPickerGridController.swift; sourceTree = "<group>"; };
 		B6DE055B1F9B7A5F00638ACA /* FeedStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedStoryboard.storyboard; sourceTree = "<group>"; };
 		B6DE055F1F9B7ACE00638ACA /* StoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
 		B6DE05861F9B912D00638ACA /* Entry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
@@ -197,7 +199,6 @@
 		B6A730771F9C157300FC17E0 /* NewsAdded */ = {
 			isa = PBXGroup;
 			children = (
-				B6A7307E1F9C198900FC17E0 /* Helper */,
 				B6A730791F9C158600FC17E0 /* Storyboard */,
 				B6A730811F9C1B7800FC17E0 /* Cell */,
 				B6A730781F9C158000FC17E0 /* Controller */,
@@ -221,14 +222,6 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		B6A7307E1F9C198900FC17E0 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				B6A7307F1F9C199B00FC17E0 /* CameraHandler.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		B6A730811F9C1B7800FC17E0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +236,15 @@
 			children = (
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		B6BE93B11F9C2BFE00C4EEC2 /* PhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				B6BE93B21F9C2C0D00C4EEC2 /* AssetsPickerController.swift */,
+				B6BE93B31F9C2C0D00C4EEC2 /* AssetsPickerGridController.swift */,
+			);
+			path = PhotoPicker;
 			sourceTree = "<group>";
 		};
 		B6DE05851F9B912200638ACA /* Entry */ = {
@@ -383,6 +385,7 @@
 		B6EC8FC31F9A7AFA00BA75E2 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				B6BE93B11F9C2BFE00C4EEC2 /* PhotoPicker */,
 				B6A730771F9C157300FC17E0 /* NewsAdded */,
 				B60A5BEE1F9C00840081F99B /* Task */,
 				B6DE05B31F9BD18500638ACA /* Camera */,
@@ -540,6 +543,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Lentach/Pods-Lentach-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CheckMarkView/CheckMarkView.framework",
 				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -549,12 +553,14 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftAssetsPickerController/SwiftAssetsPickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/VK-ios-sdk/VK_ios_sdk.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CheckMarkView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -564,6 +570,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftAssetsPickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VK_ios_sdk.framework",
 			);
@@ -614,7 +621,7 @@
 			files = (
 				B6EC8FD11F9B5D7900BA75E2 /* TaskTableViewCell.swift in Sources */,
 				B6EC8FC81F9A7B5C00BA75E2 /* ServerProvider.swift in Sources */,
-				B6A730801F9C199B00FC17E0 /* CameraHandler.swift in Sources */,
+				B6BE93B51F9C2C0D00C4EEC2 /* AssetsPickerGridController.swift in Sources */,
 				B6DE058C1F9B935900638ACA /* EntryController.swift in Sources */,
 				B6DE059D1F9BA66800638ACA /* RatingModel.swift in Sources */,
 				B60A5BE41F9BDE980081F99B /* UserDefaultsManager.swift in Sources */,
@@ -630,6 +637,7 @@
 				B6DE05601F9B7ACE00638ACA /* StoryboardExtension.swift in Sources */,
 				B6DE05AF1F9BD16500638ACA /* PreviewView.swift in Sources */,
 				B6DE05991F9BA57700638ACA /* NewsModel.swift in Sources */,
+				B6BE93B41F9C2C0D00C4EEC2 /* AssetsPickerController.swift in Sources */,
 				B6DE05B01F9BD16500638ACA /* SwiftyCamButton.swift in Sources */,
 				B6EC8FD41F9B60B600BA75E2 /* TaskCollectionViewCell.swift in Sources */,
 				B6DE05B51F9BD19900638ACA /* CameraController.swift in Sources */,

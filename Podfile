@@ -14,4 +14,6 @@ target 'Lentach' do
   pod 'Kingfisher'
   pod 'VK-ios-sdk'
   pod 'MWPhotoBrowser'
+  pod 'SwiftAssetsPickerController', '~> 0.4.0'
+
 end

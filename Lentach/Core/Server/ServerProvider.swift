@@ -18,6 +18,8 @@ enum ServerService {
     case listOfTask
     case listOfNews
     case vote(isUp: Bool, newsId: String)
+    case loadVideo(data: Data)
+    case loadImage(data: Data)
     
 }
 
@@ -40,6 +42,20 @@ extension ServerService: TargetType {
             return .requestParameters(
                 parameters: ["id": newsId],
                 encoding: URLEncoding.default)
+        case .loadVideo(let data):
+            let formData: [MultipartFormData] = [MultipartFormData(
+                provider: .data(data),
+                name: "files",
+                fileName: "video.mp4",
+                mimeType:"video/mp4")]
+            return .uploadMultipart(formData)
+        case .loadImage(let data):
+            let formData: [MultipartFormData] = [MultipartFormData(
+                provider: .data(data),
+                name: "photo",
+                fileName: "image.jpg",
+                mimeType: "image/jpeg")]
+            return .uploadMultipart(formData)
         default:
             return .requestPlain
         }
@@ -73,6 +89,8 @@ extension ServerService: TargetType {
             } else {
                 return "/api/news/voteDown"
             }
+        case .loadVideo, .loadImage:
+            return "/api/containers/media/upload"
         }
     }
     
@@ -80,7 +98,7 @@ extension ServerService: TargetType {
         switch self {
         case .listOfTask, .listOfNews:
             return .get
-        case .vkLogin, .setWallet:
+        case .vkLogin, .setWallet, .loadVideo, .loadImage:
             return .post
         case .vote:
             return .put

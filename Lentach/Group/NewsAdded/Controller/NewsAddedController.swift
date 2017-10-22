@@ -7,20 +7,64 @@
 //
 
 import UIKit
+import Photos
+import Moya
+import SVProgressHUD
 
 class NewsAddedController: UIViewController {
-
+    
+    // - UI
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    // - Data
+    fileprivate let provider = MoyaProvider<ServerService>()
+    fileprivate var phAssets = [PHAsset?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
     }
-
+    
     @IBAction func closeButtonAction(_ sender: Any) {
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
+    }
+    
+}
+
+// MARK: -
+// MARK: - Handle assets method
+
+fileprivate extension NewsAddedController {
+    
+    func handleAssets() {
+        for asset in self.phAssets {
+            
+            let manager = PHImageManager.default()
+            let option = PHImageRequestOptions()
+            var thumbnail = UIImage()
+            option.isSynchronous = true
+            
+            if asset?.mediaType == .image {
+                manager.requestImage(for: asset!, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+                    thumbnail = result!
+                    let imageData = UIImageJPEGRepresentation(thumbnail, 1.0)
+                    self.sendImage(data: imageData!)
+                })
+            } else if asset?.mediaType == .video {
+                var videoData: Data!
+                manager.requestAVAsset(forVideo: asset!, options: nil, resultHandler: { (avasset, audio, info) in
+                    if let avassetURL = avasset as? AVURLAsset {
+                        guard let video = try? Data(contentsOf: avassetURL.url) else {
+                            return
+                        }
+                        videoData = video
+                        self.sendVideo(data: videoData!)
+                    }
+                })
+            }
+        }
     }
     
 }
@@ -50,24 +94,15 @@ extension NewsAddedController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        CameraHandler(delegate_: self).getPhotoLibraryOn(self, canEdit: true)
-    }
-
-}
-
-// MARK: -
-// MARK: - Camera delegate
-
-extension NewsAddedController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerEditedImage] as UIImage {
-            picker.dismiss(animated: true, completion: nil)
-        } else if let image = info[UIImagePickerControllerMediaURL] as UIImage {
-            picker.dismiss(animated: true, completion: nil)
-        }
-
+        let assetsPickerController = AssetsPickerController()
         
+        assetsPickerController.didSelectAssets = { (assets: Array) -> () in
+            self.phAssets = assets
+            self.collectionView.reloadData()
+        }
+        
+        let navigationController = UINavigationController(rootViewController: assetsPickerController)
+        self.present(navigationController, animated: true, completion: nil)
     }
     
 }
@@ -76,9 +111,46 @@ extension NewsAddedController: UINavigationControllerDelegate, UIImagePickerCont
 // MARK: - Collection View Configure
 
 extension NewsAddedController: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 80, height: 120)
+    }
+    
+}
+
+// MARK: -
+// MARK: - Server methods
+
+fileprivate extension NewsAddedController {
+    
+    func sendImage(data: Data) {
+        self.provider.request(.loadImage(data: data)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let statusCode = moyaResponse.statusCode
+                if statusCode == 200 {
+                } else {
+                    SVProgressHUD.showError(withStatus: "Ошибка")
+                }
+            case .failure(_):
+                SVProgressHUD.showError(withStatus: "Ошибка")
+            }
+        }
+    }
+    
+    func sendVideo(data: Data) {
+        self.provider.request(.loadVideo(data: data)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let statusCode = moyaResponse.statusCode
+                if statusCode == 200 {
+                } else {
+                    SVProgressHUD.showError(withStatus: "Ошибка")
+                }
+            case .failure(_):
+                SVProgressHUD.showError(withStatus: "Ошибка")
+            }
+        }
     }
     
 }
