@@ -25,6 +25,7 @@ class TaskCollectionViewCell: UICollectionViewCell {
     func set(task: TaskModel) {
         self.nameLabel.text = task.title
         self.priceLabel.text = "\(task.sum)руб."
+        self.timeLabel.text = task.date.getStringTime()
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: task.place.lat, longitude: task.place.long)

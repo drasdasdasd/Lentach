@@ -37,8 +37,13 @@ class NewsWithMediaCell: UITableViewCell {
         self.descriptionLabel.text = news.description
         self.countOfMedia.text = "\(news.medias.count)"
         self.updateImage(news: news)
+        self.dateLabel.text = news.date.getStringTime()
         
-        self.photoImageView.kf.setImage(with: URL(string: news.user.imgSrc))
+        if news.user.imgSrc.isEmpty {
+            self.photoImageView.image = #imageLiteral(resourceName: "avaMock")
+        } else {
+            self.photoImageView.kf.setImage(with: URL(string: news.user.imgSrc))
+        }
         
         if !news.rating.isVoted {
             self.likeLabel.text = ""

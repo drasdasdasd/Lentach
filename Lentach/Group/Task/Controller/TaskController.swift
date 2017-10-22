@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class TaskController: UIViewController {
 
     // - UI
+    @IBOutlet weak var taskMapView: MKMapView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -29,6 +31,9 @@ class TaskController: UIViewController {
     }
     
     @IBAction func openCameraButtonAction(_ sender: Any) {
+        let cameraController = UIStoryboard(storyboard: .camera).instantiateInitialViewController() as! CameraController
+        cameraController.taskId = task.id
+        self.navigationController?.pushViewController(cameraController, animated: true)
     }
     
 }
@@ -42,6 +47,13 @@ fileprivate extension TaskController {
         self.titleLabel.text = self.task.title
         self.descriptionLabel.text = self.task.description
         self.priceLabel.text = "\(self.task.sum)руб."
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: task.place.lat, longitude: task.place.long)
+        self.taskMapView.addAnnotation(annotation)
+        
+        let camera = MKMapCamera(lookingAtCenter: annotation.coordinate, fromDistance: 3500, pitch: 20, heading: 20)
+        self.taskMapView.setCamera(camera, animated: false)
     }
     
 }

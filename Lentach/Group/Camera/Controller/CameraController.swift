@@ -14,6 +14,8 @@ class CameraController: SwiftyCamViewController {
     @IBOutlet weak var flipCameraButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var photoButton: UIButton!
+    
+    var taskId: String?
             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,7 @@ extension CameraController {
     @IBAction func textButtonAction(_ sender: Any) {
         let controller = UIStoryboard(storyboard: .newsAdded).instantiateInitialViewController() as! NewsAddedController
         controller.neededShowKeyboard = true
+        controller.taskId = taskId
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -74,6 +77,7 @@ extension CameraController: SwiftyCamViewControllerDelegate {
         let model = LocalMediaModel()
         model.image = photo
         controller.phAssets.append(model)
+        controller.taskId = taskId
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -82,6 +86,8 @@ extension CameraController: SwiftyCamViewControllerDelegate {
         let model = LocalMediaModel()
         let data = try! NSData(contentsOf: url, options: .mappedIfSafe)
         model.videoData = data as Data
+        controller.taskId = taskId
+        controller.phAssets.append(model)
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

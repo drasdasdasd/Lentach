@@ -106,6 +106,7 @@
                         <outlet property="dateLabel" destination="spH-aB-KLb" id="rkG-de-9rc"/>
                         <outlet property="descriptionLabel" destination="hZP-yj-lZM" id="4bh-Vw-LQu"/>
                         <outlet property="priceLabel" destination="qh7-Pu-9yt" id="Ou2-lb-kPe"/>
+                        <outlet property="taskMapView" destination="WEt-9B-w9N" id="sem-4w-0xf"/>
                         <outlet property="titleLabel" destination="6FV-4o-Da5" id="9sM-Y4-ynq"/>
                     </connections>
                 </viewController>

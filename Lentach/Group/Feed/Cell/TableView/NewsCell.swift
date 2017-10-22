@@ -32,6 +32,13 @@ class NewsCell: UITableViewCell {
         self.news = news
         self.nameLabel.text = news.user.firstName + " " + news.user.secondName
         self.descriptionLabel.text = news.description
+        self.dateLabel.text = news.date.getStringTime()
+        
+        if news.user.imgSrc.isEmpty {
+            self.photoImageView.image = #imageLiteral(resourceName: "avaMock")
+        } else {
+            self.photoImageView.kf.setImage(with: URL(string: news.user.imgSrc))
+        }
         
         if !news.rating.isVoted {
             self.likeLabel.text = ""

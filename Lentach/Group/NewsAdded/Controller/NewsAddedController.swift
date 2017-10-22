@@ -22,9 +22,9 @@ class NewsAddedController: UIViewController {
     // - Data
     fileprivate let provider = MoyaProvider<ServerService>()
     fileprivate var medias = [MediaModel]()
-    
     fileprivate let dispatchGroup = DispatchGroup()
     
+    var taskId: String?
     var phAssets = [LocalMediaModel]()
     var neededShowKeyboard = false
     
@@ -182,6 +182,7 @@ fileprivate extension NewsAddedController {
         news.medias = self.medias
         news.description = self.textView.text.isEmpty ? "Описания нету" : self.textView.text
         news.userId = UserDefaultsManager().getUser()?.id ?? ""
+        news.taskId = taskId
         
         let json = news.toJSON()
         

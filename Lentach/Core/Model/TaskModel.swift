@@ -23,7 +23,6 @@ class TaskModel: Mappable {
     func mapping(map: Map) {
         title <- map["title"]
         description <- map["description"]
-        date <- map["date"]
         date <- (map["datetime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"))
         sum <- map["sum"]
         id <- map["id"]

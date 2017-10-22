@@ -23,6 +23,7 @@
 		B6BE93B41F9C2C0D00C4EEC2 /* AssetsPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BE93B21F9C2C0D00C4EEC2 /* AssetsPickerController.swift */; };
 		B6BE93B51F9C2C0D00C4EEC2 /* AssetsPickerGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BE93B31F9C2C0D00C4EEC2 /* AssetsPickerGridController.swift */; };
 		B6BE93B81F9C5CDA00C4EEC2 /* LocalMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BE93B71F9C5CDA00C4EEC2 /* LocalMediaModel.swift */; };
+		B6D31C701F9C6D120088EE50 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D31C6F1F9C6D120088EE50 /* DateExtension.swift */; };
 		B6DE055C1F9B7A5F00638ACA /* FeedStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DE055B1F9B7A5F00638ACA /* FeedStoryboard.storyboard */; };
 		B6DE05601F9B7ACE00638ACA /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE055F1F9B7ACE00638ACA /* StoryboardExtension.swift */; };
 		B6DE05871F9B912D00638ACA /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DE05861F9B912D00638ACA /* Entry.storyboard */; };
@@ -71,6 +72,7 @@
 		B6BE93B21F9C2C0D00C4EEC2 /* AssetsPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPickerController.swift; sourceTree = "<group>"; };
 		B6BE93B31F9C2C0D00C4EEC2 /* AssetsPickerGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPickerGridController.swift; sourceTree = "<group>"; };
 		B6BE93B71F9C5CDA00C4EEC2 /* LocalMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMediaModel.swift; sourceTree = "<group>"; };
+		B6D31C6F1F9C6D120088EE50 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B6DE055B1F9B7A5F00638ACA /* FeedStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedStoryboard.storyboard; sourceTree = "<group>"; };
 		B6DE055F1F9B7ACE00638ACA /* StoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
 		B6DE05861F9B912D00638ACA /* Entry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
@@ -258,6 +260,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B6D31C6E1F9C6CFF0088EE50 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B6D31C6F1F9C6D120088EE50 /* DateExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B6DE05851F9B912200638ACA /* Entry */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +373,7 @@
 		B6EC8FC01F9A7AED00BA75E2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B6D31C6E1F9C6CFF0088EE50 /* Extension */,
 				B6DE05AA1F9BD15900638ACA /* Camera */,
 				B6DE059E1F9BB44000638ACA /* Layout */,
 				B6EC8FC61F9A7B0B00BA75E2 /* Server */,
@@ -639,6 +650,7 @@
 				B6DE05BB1F9BD32800638ACA /* SwiftyRecordButton.swift in Sources */,
 				B6DE05A51F9BBA4100638ACA /* NewsCell.swift in Sources */,
 				B6DE05B21F9BD16500638ACA /* SwiftyCamViewControllerDelegate.swift in Sources */,
+				B6D31C701F9C6D120088EE50 /* DateExtension.swift in Sources */,
 				B60A5BE61F9BE0A70081F99B /* UserModel.swift in Sources */,
 				B6A730851F9C1B9E00FC17E0 /* PlusAddNewsCell.swift in Sources */,
 				B6DE05951F9BA11A00638ACA /* TaskModel.swift in Sources */,

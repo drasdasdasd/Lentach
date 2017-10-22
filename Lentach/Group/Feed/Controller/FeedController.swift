@@ -76,7 +76,7 @@ fileprivate extension FeedController {
                 if statusCode == 200 {
                     let json = JSON(moyaResponse.data).object
                     if let news = Mapper<NewsModel>().mapArray(JSONObject: json) {
-                        self.news = news
+                        self.news = news.reversed()
                         self.tableView.reloadData()
                     }
                 } else {

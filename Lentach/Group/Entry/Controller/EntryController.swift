@@ -16,7 +16,7 @@ import ObjectMapper
 class EntryController: UIViewController {
     
     fileprivate let provider = MoyaProvider<ServerService>()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -52,7 +52,7 @@ fileprivate extension EntryController {
             switch result {
             case let .success(moyaResponse):
                 let statusCode = moyaResponse.statusCode
-                if statusCode == 200 {
+                if statusCode == 200 { 
                     // - Map
                     let json = JSON(moyaResponse.data).dictionary
                     let userJSON = json!["response"]!.object
@@ -62,10 +62,15 @@ fileprivate extension EntryController {
                     UserDefaultsManager().save(user: user?.toJSONString() ?? "")
                     
                     // - Push
-                    let bitController = UIStoryboard(storyboard: .bitcoin).instantiateInitialViewController() as! BitcoinController
-                    bitController.userId = user?.id ?? ""
-                    bitController.accessToken = user?.token ?? ""
-                    self.navigationController?.pushViewController(bitController, animated: true)
+                    if (user?.btcWallet ?? "").isEmpty {
+                        let bitController = UIStoryboard(storyboard: .bitcoin).instantiateInitialViewController() as! BitcoinController
+                        bitController.userId = user?.id ?? ""
+                        bitController.accessToken = user?.token ?? ""
+                        self.navigationController?.pushViewController(bitController, animated: true)
+                    } else {
+                        let controller = UIStoryboard(storyboard: .feed).instantiateInitialViewController()
+                        self.navigationController?.pushViewController(controller!, animated: true)
+                    }
                     
                 } else {
                     SVProgressHUD.showError(withStatus: "Ошибка")
@@ -100,7 +105,7 @@ extension EntryController: VKSdkDelegate, VKSdkUIDelegate {
             self.sendToken(token: result.token.accessToken)
         }
     }
-        
+    
     func vkSdkUserAuthorizationFailed() {
     }
     

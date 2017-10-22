@@ -20,6 +20,8 @@ class NewsModel: Mappable {
     var rating = RatingModel()
     var user = UserModel()
     
+    var taskId: String?
+    
     required init?(map: Map) {}
     init() {}
     
@@ -28,7 +30,7 @@ class NewsModel: Mappable {
             id <- map["id"]
             description <- map["description"]
             place <- map["place"]
-            date <- map["lat"]
+            date <- (map["datetime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"))
             userId <- map["userId"]
             medias <- map["mediaIds"]
             rating <- map["rating"]
@@ -37,6 +39,10 @@ class NewsModel: Mappable {
             description >>> map["description"]
             medias >>> map["mediaIds"]
             userId >>> map["userId"]
+            
+            if let task = self.taskId {
+                task >>> map["taskId"]
+            }
         }
     }
     
