@@ -262,6 +262,8 @@ fileprivate extension NewsAddedController {
         self.collectionView.delegate = self
         self.textView.delegate = self
         self.textView.autocorrectionType = .no
+        self.textView.text = "Опишите ситуацию..."
+        self.textView.textColor = UIColor.lightGray
         if self.neededShowKeyboard {
             self.textView.becomeFirstResponder()
         }
@@ -299,6 +301,20 @@ extension NewsAddedController: UITextViewDelegate {
             self.view.endEditing(true)
         }
         return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Опишите ситуацию..."
+            textView.textColor = UIColor.lightGray
+        }
     }
     
 }
