@@ -15,10 +15,14 @@ class NewsAddedController: UIViewController {
     
     // - UI
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var firstViewTopConstraint: NSLayoutConstraint!
     
     // - Data
     fileprivate let provider = MoyaProvider<ServerService>()
     fileprivate var phAssets = [PHAsset?]()
+    
+    fileprivate let dispatchGroup = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,7 @@ class NewsAddedController: UIViewController {
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
+        self.sendAssets()
     }
     
 }
@@ -38,7 +43,8 @@ class NewsAddedController: UIViewController {
 
 fileprivate extension NewsAddedController {
     
-    func handleAssets() {
+    func sendAssets() {
+        SVProgressHUD.show()
         for asset in self.phAssets {
             
             let manager = PHImageManager.default()
@@ -47,7 +53,7 @@ fileprivate extension NewsAddedController {
             option.isSynchronous = true
             
             if asset?.mediaType == .image {
-                manager.requestImage(for: asset!, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+                manager.requestImage(for: asset!, targetSize: CGSize(width: 800, height: 800), contentMode: .aspectFit, options: option, resultHandler: { (result, info) -> Void in
                     thumbnail = result!
                     let imageData = UIImageJPEGRepresentation(thumbnail, 1.0)
                     self.sendImage(data: imageData!)
@@ -65,6 +71,10 @@ fileprivate extension NewsAddedController {
                 })
             }
         }
+        
+        self.dispatchGroup.notify(queue: .main) {
+            SVProgressHUD.dismiss()
+        }
     }
     
 }
@@ -79,11 +89,15 @@ extension NewsAddedController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 1 + self.phAssets.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return self.plusCell(collectionView: collectionView, indexPath: indexPath)
+        if indexPath.row >= self.phAssets.count {
+            return self.plusCell(collectionView: collectionView, indexPath: indexPath)
+        } else {
+            return self.imageCell(collectionView:collectionView, indexPath: indexPath)
+        }
     }
     
     func plusCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
@@ -93,11 +107,20 @@ extension NewsAddedController: UICollectionViewDataSource {
         return cell
     }
     
+    func imageCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: Cell.media.rawValue,
+            for: indexPath) as! MediaAddNewsCell
+        cell.set(asset: self.phAssets[indexPath.row])
+        return cell
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let assetsPickerController = AssetsPickerController()
-        
+
         assetsPickerController.didSelectAssets = { (assets: Array) -> () in
-            self.phAssets = assets
+            self.phAssets += assets
             self.collectionView.reloadData()
         }
         
@@ -124,31 +147,25 @@ extension NewsAddedController: UICollectionViewDelegateFlowLayout {
 fileprivate extension NewsAddedController {
     
     func sendImage(data: Data) {
+        self.dispatchGroup.enter()
         self.provider.request(.loadImage(data: data)) { result in
             switch result {
-            case let .success(moyaResponse):
-                let statusCode = moyaResponse.statusCode
-                if statusCode == 200 {
-                } else {
-                    SVProgressHUD.showError(withStatus: "Ошибка")
-                }
+            case .success(_):
+                self.dispatchGroup.leave()
             case .failure(_):
-                SVProgressHUD.showError(withStatus: "Ошибка")
+                self.dispatchGroup.leave()
             }
         }
     }
     
     func sendVideo(data: Data) {
+        self.dispatchGroup.enter()
         self.provider.request(.loadVideo(data: data)) { result in
             switch result {
-            case let .success(moyaResponse):
-                let statusCode = moyaResponse.statusCode
-                if statusCode == 200 {
-                } else {
-                    SVProgressHUD.showError(withStatus: "Ошибка")
-                }
+            case .success(_):
+                self.dispatchGroup.leave()
             case .failure(_):
-                SVProgressHUD.showError(withStatus: "Ошибка")
+                self.dispatchGroup.leave()
             }
         }
     }
@@ -168,6 +185,42 @@ fileprivate extension NewsAddedController {
     func configure() {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        self.textView.delegate = self
+        self.textView.autocorrectionType = .no
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            UIView.animate(withDuration: 0.3, animations: {
+                self.firstViewTopConstraint.constant = -(keyboardHeight / 2)
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.firstViewTopConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+}
+
+// MARK: -
+// MARK: - Text view delegate
+
+extension NewsAddedController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            self.view.endEditing(true)
+        }
+        return true
     }
     
 }
