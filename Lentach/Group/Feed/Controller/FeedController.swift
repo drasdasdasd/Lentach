@@ -76,7 +76,7 @@ fileprivate extension FeedController {
                 if statusCode == 200 {
                     let json = JSON(moyaResponse.data).object
                     if let news = Mapper<NewsModel>().mapArray(JSONObject: json) {
-                        self.news = news.reversed()
+                        self.news = news
                         self.tableView.reloadData()
                     }
                 } else {
@@ -246,8 +246,8 @@ fileprivate extension FeedController {
     }
     
     @objc func plusButtonAction(_ button: UIButton) {
-        let cameraController = UIStoryboard(storyboard: .camera).instantiateInitialViewController()
-        self.navigationController?.pushViewController(cameraController!, animated: true)
+        let cameraController = UIStoryboard(storyboard: .camera).instantiateInitialViewController() as! CameraController
+        self.navigationController?.pushViewController(cameraController, animated: true)
     }
     
 }

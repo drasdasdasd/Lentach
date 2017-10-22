@@ -36,7 +36,7 @@ class NewsModel: Mappable {
         } else {
             description >>> map["description"]
             medias >>> map["mediaIds"]
-            id >>> map["id"]
+            userId >>> map["userId"]
         }
     }
     

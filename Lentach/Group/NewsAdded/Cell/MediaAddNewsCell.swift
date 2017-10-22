@@ -18,13 +18,18 @@ class MediaAddNewsCell: UICollectionViewCell {
         self.configure(view: self)
     }
     
-    func set(asset: PHAsset?) {
+    func set(asset: LocalMediaModel) {
         let manager = PHImageManager.default()
         let option = PHImageRequestOptions()
         option.isSynchronous = true
         
-        if asset?.mediaType == .image {
-            manager.requestImage(for: asset!, targetSize: CGSize(width: 150, height: 150), contentMode: .aspectFit, options: option, resultHandler: { (result, info) -> Void in
+        if let image = asset.image {
+            
+            self.photoImageView.image = image
+            self.configure(view: self.photoImageView)
+            
+        } else if asset.phAsset?.mediaType == .image {
+            manager.requestImage(for: asset.phAsset!, targetSize: CGSize(width: 150, height: 150), contentMode: .aspectFit, options: option, resultHandler: { (result, info) -> Void in
                 self.photoImageView.image = result!
                 self.configure(view: self.photoImageView)
             })

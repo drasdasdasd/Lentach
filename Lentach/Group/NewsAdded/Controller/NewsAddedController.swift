@@ -21,10 +21,12 @@ class NewsAddedController: UIViewController {
     
     // - Data
     fileprivate let provider = MoyaProvider<ServerService>()
-    fileprivate var phAssets = [PHAsset?]()
     fileprivate var medias = [MediaModel]()
     
     fileprivate let dispatchGroup = DispatchGroup()
+    
+    var phAssets = [LocalMediaModel]()
+    var neededShowKeyboard = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +34,20 @@ class NewsAddedController: UIViewController {
     }
     
     @IBAction func closeButtonAction(_ sender: Any) {
+        self.dismiss()
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
         self.sendAssets()
+    }
+    
+    func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+        for controller in (self.navigationController?.viewControllers)! {
+            if controller is FeedController {
+                self.navigationController?.popToViewController(controller, animated: true)
+            }
+        }
     }
     
 }
@@ -49,13 +61,24 @@ fileprivate extension NewsAddedController {
         SVProgressHUD.show()
         for asset in self.phAssets {
             
+            if let image = asset.image {
+                let imageData = UIImageJPEGRepresentation(image, 1.0)
+                self.sendImage(data: imageData!)
+                continue
+            } else if let dataVideo = asset.videoData {
+                self.sendVideo(data: dataVideo)
+                continue
+            }
+            
+            let asset = asset.phAsset
+            
             let manager = PHImageManager.default()
             let option = PHImageRequestOptions()
             var thumbnail = UIImage()
             option.isSynchronous = true
             
-            if asset?.mediaType == .image {
-                manager.requestImage(for: asset!, targetSize: CGSize(width: 800, height: 800), contentMode: .aspectFit, options: option, resultHandler: { (result, info) -> Void in
+            if let asset = asset, asset.mediaType == .image {
+                manager.requestImage(for: asset, targetSize: CGSize(width: 800, height: 800), contentMode: .aspectFit, options: option, resultHandler: { (result, info) -> Void in
                     thumbnail = result!
                     let imageData = UIImageJPEGRepresentation(thumbnail, 1.0)
                     self.sendImage(data: imageData!)
@@ -122,7 +145,13 @@ extension NewsAddedController: UICollectionViewDataSource {
         let assetsPickerController = AssetsPickerController()
 
         assetsPickerController.didSelectAssets = { (assets: Array) -> () in
-            self.phAssets += assets
+            
+            for asset in assets {
+                let model = LocalMediaModel()
+                model.phAsset = asset
+                self.phAssets.append(model)
+            }
+            
             self.collectionView.reloadData()
         }
         
@@ -152,14 +181,20 @@ fileprivate extension NewsAddedController {
         let news = NewsModel()
         news.medias = self.medias
         news.description = self.textView.text.isEmpty ? "Описания нету" : self.textView.text
+        news.userId = UserDefaultsManager().getUser()?.id ?? ""
+        
         let json = news.toJSON()
         
         self.provider.request(.uploadNews(news: json)) { result in
             switch result {
             case let .success(moyaResponse):
-                let json = JSON(moyaResponse.data)
                 let statusCode = moyaResponse.statusCode
-                print(statusCode)
+                if statusCode == 200 {
+                    self.dismiss()
+                    SVProgressHUD.dismiss()
+                } else {
+                    SVProgressHUD.showError(withStatus: "Ошибка")
+                }
             case .failure(_):
                 SVProgressHUD.showError(withStatus: "Ошибка")
             }
@@ -226,6 +261,9 @@ fileprivate extension NewsAddedController {
         self.collectionView.delegate = self
         self.textView.delegate = self
         self.textView.autocorrectionType = .no
+        if self.neededShowKeyboard {
+            self.textView.becomeFirstResponder()
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     }

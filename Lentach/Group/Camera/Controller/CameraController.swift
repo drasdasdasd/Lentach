@@ -14,7 +14,7 @@ class CameraController: SwiftyCamViewController {
     @IBOutlet weak var flipCameraButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var photoButton: UIButton!
-    
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
@@ -29,11 +29,10 @@ class CameraController: SwiftyCamViewController {
         self.captureButton.delegate = self
     }
     
-    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didTake photo: UIImage) {
-        // let newVC = PhotoViewController(image: photo)
-       //  self.present(newVC, animated: true, completion: nil)
+    func dismiss() {
+        self.dismiss(animated: false, completion: nil)
     }
-
+    
 }
 
 // MARK: -
@@ -42,7 +41,9 @@ class CameraController: SwiftyCamViewController {
 extension CameraController {
     
     @IBAction func textButtonAction(_ sender: Any) {
-        // code
+        let controller = UIStoryboard(storyboard: .newsAdded).instantiateInitialViewController() as! NewsAddedController
+        controller.neededShowKeyboard = true
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }
@@ -53,7 +54,6 @@ extension CameraController {
 extension CameraController: SwiftyCamViewControllerDelegate {
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didBeginRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
-        print("Did Begin Recording")
         self.captureButton.growButton()
         UIView.animate(withDuration: 0.25, animations: {
             self.flashButton.alpha = 0.0
@@ -62,7 +62,6 @@ extension CameraController: SwiftyCamViewControllerDelegate {
     }
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
-        print("Did finish Recording")
         self.captureButton.shrinkButton()
         UIView.animate(withDuration: 0.25, animations: {
             self.flashButton.alpha = 1.0
@@ -70,9 +69,20 @@ extension CameraController: SwiftyCamViewControllerDelegate {
         })
     }
     
+    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didTake photo: UIImage) {
+        let controller = UIStoryboard(storyboard: .newsAdded).instantiateInitialViewController() as! NewsAddedController
+        let model = LocalMediaModel()
+        model.image = photo
+        controller.phAssets.append(model)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
-        //  let newVC = VideoViewController(videoURL: url)
-        // self.present(newVC, animated: true, completion: nil)
+        let controller = UIStoryboard(storyboard: .newsAdded).instantiateInitialViewController() as! NewsAddedController
+        let model = LocalMediaModel()
+        let data = try! NSData(contentsOf: url, options: .mappedIfSafe)
+        model.videoData = data as Data
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFocusAtPoint point: CGPoint) {
