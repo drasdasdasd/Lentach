@@ -64,7 +64,7 @@ extension ServerService: TargetType {
         case .uploadNews(let parameters):
             return .requestParameters(
                 parameters: parameters,
-                encoding: URLEncoding.default)
+                encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }
