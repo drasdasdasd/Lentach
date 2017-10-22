@@ -16,6 +16,8 @@
 		B693BB5A1F9A79B500784B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B693BB591F9A79B500784B54 /* Assets.xcassets */; };
 		B693BB5D1F9A79B500784B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B693BB5B1F9A79B500784B54 /* LaunchScreen.storyboard */; };
 		B6A730761F9C10F600FC17E0 /* MediaCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A730751F9C10F600FC17E0 /* MediaCreator.swift */; };
+		B6A7307B1F9C159900FC17E0 /* NewsAddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7307A1F9C159900FC17E0 /* NewsAddedController.swift */; };
+		B6A7307D1F9C15A100FC17E0 /* NewsAdded.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6A7307C1F9C15A100FC17E0 /* NewsAdded.storyboard */; };
 		B6DE055C1F9B7A5F00638ACA /* FeedStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DE055B1F9B7A5F00638ACA /* FeedStoryboard.storyboard */; };
 		B6DE05601F9B7ACE00638ACA /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE055F1F9B7ACE00638ACA /* StoryboardExtension.swift */; };
 		B6DE05871F9B912D00638ACA /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DE05861F9B912D00638ACA /* Entry.storyboard */; };
@@ -57,6 +59,8 @@
 		B693BB5C1F9A79B500784B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B693BB5E1F9A79B500784B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6A730751F9C10F600FC17E0 /* MediaCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCreator.swift; sourceTree = "<group>"; };
+		B6A7307A1F9C159900FC17E0 /* NewsAddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAddedController.swift; sourceTree = "<group>"; };
+		B6A7307C1F9C15A100FC17E0 /* NewsAdded.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsAdded.storyboard; sourceTree = "<group>"; };
 		B6DE055B1F9B7A5F00638ACA /* FeedStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedStoryboard.storyboard; sourceTree = "<group>"; };
 		B6DE055F1F9B7ACE00638ACA /* StoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
 		B6DE05861F9B912D00638ACA /* Entry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
@@ -182,6 +186,31 @@
 				B6A730751F9C10F600FC17E0 /* MediaCreator.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B6A730771F9C157300FC17E0 /* NewsAdded */ = {
+			isa = PBXGroup;
+			children = (
+				B6A730791F9C158600FC17E0 /* Storyboard */,
+				B6A730781F9C158000FC17E0 /* Controller */,
+			);
+			path = NewsAdded;
+			sourceTree = "<group>";
+		};
+		B6A730781F9C158000FC17E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6A7307A1F9C159900FC17E0 /* NewsAddedController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B6A730791F9C158600FC17E0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B6A7307C1F9C15A100FC17E0 /* NewsAdded.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		B6B535D31F9B65390069139B /* Layout */ = {
@@ -329,6 +358,7 @@
 		B6EC8FC31F9A7AFA00BA75E2 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				B6A730771F9C157300FC17E0 /* NewsAdded */,
 				B60A5BEE1F9C00840081F99B /* Task */,
 				B6DE05B31F9BD18500638ACA /* Camera */,
 				B6EC8FC41F9A7AFF00BA75E2 /* Feed */,
@@ -465,6 +495,7 @@
 			files = (
 				B6DE05911F9B93A900638ACA /* Bitcoin.storyboard in Resources */,
 				B6DE05B91F9BD1AD00638ACA /* Camera.storyboard in Resources */,
+				B6A7307D1F9C15A100FC17E0 /* NewsAdded.storyboard in Resources */,
 				B693BB5D1F9A79B500784B54 /* LaunchScreen.storyboard in Resources */,
 				B6DE05871F9B912D00638ACA /* Entry.storyboard in Resources */,
 				B6DE055C1F9B7A5F00638ACA /* FeedStoryboard.storyboard in Resources */,
@@ -577,6 +608,7 @@
 				B6DE05B51F9BD19900638ACA /* CameraController.swift in Sources */,
 				B6DE059B1F9BA63D00638ACA /* MediaModel.swift in Sources */,
 				B6DE05971F9BA28A00638ACA /* PlaceModel.swift in Sources */,
+				B6A7307B1F9C159900FC17E0 /* NewsAddedController.swift in Sources */,
 				B6DE05931F9B93B300638ACA /* BitcoinController.swift in Sources */,
 				B6DE05B11F9BD16500638ACA /* SwiftyCamViewController.swift in Sources */,
 				B60A5BF41F9C02450081F99B /* TaskController.swift in Sources */,

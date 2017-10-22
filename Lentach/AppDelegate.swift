@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController: UINavigationController!
         
         if UserDefaultsManager().getUser() != nil {
-            rootController = UIStoryboard(storyboard: .feed).instantiateInitialViewController()
+            rootController = UIStoryboard(storyboard: .newsAdded).instantiateInitialViewController()
             navigationController = UINavigationController(rootViewController: rootController)
         } else {
             rootController = UIStoryboard(storyboard: .entry).instantiateInitialViewController()

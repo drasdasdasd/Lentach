@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rEb-yD-xsK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Ll6-xG-ZEj">
+            <objects>
+                <viewController id="rEb-yD-xsK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZU8-sZ-Eh3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vS-cu-zhQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32b-IU-a6u">
+                                        <rect key="frame" x="234" y="25" width="128" height="35"/>
+                                        <color key="backgroundColor" red="0.92941176470588238" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="67D-7z-d7b"/>
+                                            <constraint firstAttribute="width" constant="128" id="pzG-6j-6yZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Отправить">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcW-Nd-Ueg">
+                                        <rect key="frame" x="3" y="19.5" width="43" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="TTa-mk-sFh"/>
+                                            <constraint firstAttribute="width" constant="43" id="iTB-Q5-r1j"/>
+                                        </constraints>
+                                        <state key="normal" image="closeButton"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="32b-IU-a6u" firstAttribute="top" secondItem="4vS-cu-zhQ" secondAttribute="top" constant="25" id="8zz-F8-CkD"/>
+                                    <constraint firstAttribute="height" constant="215" id="Czl-5Z-iS3"/>
+                                    <constraint firstItem="GcW-Nd-Ueg" firstAttribute="centerY" secondItem="32b-IU-a6u" secondAttribute="centerY" id="QQy-rV-IQP"/>
+                                    <constraint firstAttribute="trailing" secondItem="32b-IU-a6u" secondAttribute="trailing" constant="13" id="TXG-Rz-cyV"/>
+                                    <constraint firstItem="GcW-Nd-Ueg" firstAttribute="leading" secondItem="4vS-cu-zhQ" secondAttribute="leading" constant="3" id="mEH-KT-kqq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4vS-cu-zhQ" firstAttribute="top" secondItem="ZU8-sZ-Eh3" secondAttribute="top" id="Ozb-w7-4hI"/>
+                            <constraint firstItem="4vS-cu-zhQ" firstAttribute="leading" secondItem="WZY-lA-sZb" secondAttribute="leading" id="QCR-Uq-EsJ"/>
+                            <constraint firstItem="4vS-cu-zhQ" firstAttribute="trailing" secondItem="WZY-lA-sZb" secondAttribute="trailing" id="wEe-Ui-B2H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WZY-lA-sZb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ND-ye-zKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.59999999999999" y="177.66116941529236"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="closeButton" width="14" height="14"/>
+    </resources>
+</document>

@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-let BaseURL = "http://92.53.102.42:3000"
+let BaseURL = "https://wavemeup.me"
 
 enum ServerService {
     

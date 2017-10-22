@@ -23,6 +23,7 @@ enum Storyboard: String {
     case feed = "FeedStoryboard"
     case camera = "Camera"
     case task = "Task"
+    case newsAdded = "NewsAdded"
 
     var filename: String {
         return rawValue
