@@ -33,6 +33,7 @@ class FeedController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.addPlusButton()
+        self.getTasks()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

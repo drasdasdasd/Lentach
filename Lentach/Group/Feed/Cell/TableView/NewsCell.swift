@@ -24,10 +24,13 @@ class NewsCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.photoImageView.layer.cornerRadius = 22
+        self.photoImageView.layer.masksToBounds = true
     }
     
     func set(news: NewsModel) {
         self.news = news
+        self.nameLabel.text = news.user.firstName + " " + news.user.secondName
         self.descriptionLabel.text = news.description
         
         if !news.rating.isVoted {

@@ -10,6 +10,7 @@ import UIKit
 import Photos
 import Moya
 import SVProgressHUD
+import SwiftyJSON
 
 class NewsAddedController: UIViewController {
     
@@ -21,6 +22,7 @@ class NewsAddedController: UIViewController {
     // - Data
     fileprivate let provider = MoyaProvider<ServerService>()
     fileprivate var phAssets = [PHAsset?]()
+    fileprivate var medias = [MediaModel]()
     
     fileprivate let dispatchGroup = DispatchGroup()
     
@@ -73,7 +75,7 @@ fileprivate extension NewsAddedController {
         }
         
         self.dispatchGroup.notify(queue: .main) {
-            SVProgressHUD.dismiss()
+            self.sendNews()
         }
     }
     
@@ -146,11 +148,31 @@ extension NewsAddedController: UICollectionViewDelegateFlowLayout {
 
 fileprivate extension NewsAddedController {
     
+    func sendNews() {
+        let news = NewsModel()
+        news.medias = self.medias
+        news.description = self.textView.text.isEmpty ? "Описания нету" : self.textView.text
+        let json = news.toJSON()
+        
+        self.provider.request(.uploadNews(news: json)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let json = JSON(moyaResponse.data)
+                let statusCode = moyaResponse.statusCode
+                print(statusCode)
+            case .failure(_):
+                SVProgressHUD.showError(withStatus: "Ошибка")
+            }
+        }
+    }
+    
     func sendImage(data: Data) {
         self.dispatchGroup.enter()
         self.provider.request(.loadImage(data: data)) { result in
             switch result {
-            case .success(_):
+            case let .success(moyaResponse):
+                let json = JSON(moyaResponse.data)
+                self.addMedia(json: json)
                 self.dispatchGroup.leave()
             case .failure(_):
                 self.dispatchGroup.leave()
@@ -162,11 +184,28 @@ fileprivate extension NewsAddedController {
         self.dispatchGroup.enter()
         self.provider.request(.loadVideo(data: data)) { result in
             switch result {
-            case .success(_):
+            case let .success(moyaResponse):
+                let json = JSON(moyaResponse.data)
+                self.addMedia(json: json)
                 self.dispatchGroup.leave()
             case .failure(_):
                 self.dispatchGroup.leave()
             }
+        }
+    }
+    
+    func addMedia(json: JSON) {
+        if let json = json["result"]["files"]["file"].array?.first {
+            let name = json["name"].string
+            let type = json["type"].string
+            
+            let media = MediaModel()
+            media.id = name ?? ""
+            
+            let firstType = type?.split(separator: "/").first ?? ""
+            media.type = firstType == "image" ? "img" : "video"
+            
+            self.medias.append(media)
         }
     }
     

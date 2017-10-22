@@ -20,6 +20,7 @@ enum ServerService {
     case vote(isUp: Bool, newsId: String)
     case loadVideo(data: Data)
     case loadImage(data: Data)
+    case uploadNews(news: [String: Any])
     
 }
 
@@ -34,6 +35,10 @@ extension ServerService: TargetType {
             return .requestParameters(
                 parameters: ["access_token": token],
                 encoding: URLEncoding.default)
+        case .listOfNews:
+            return .requestParameters(
+                parameters: ["filter": ["include": ["task", "user"]]],
+                encoding: URLEncoding.default)
         case .setWallet(let userId, let bitcoin, _):
             return .requestParameters(
                 parameters: ["userId": userId, "value": bitcoin],
@@ -45,17 +50,21 @@ extension ServerService: TargetType {
         case .loadVideo(let data):
             let formData: [MultipartFormData] = [MultipartFormData(
                 provider: .data(data),
-                name: "files",
+                name: "file",
                 fileName: "video.mp4",
                 mimeType:"video/mp4")]
             return .uploadMultipart(formData)
         case .loadImage(let data):
             let formData: [MultipartFormData] = [MultipartFormData(
                 provider: .data(data),
-                name: "photo",
+                name: "file",
                 fileName: "image.jpg",
                 mimeType: "image/jpeg")]
             return .uploadMultipart(formData)
+        case .uploadNews(let parameters):
+            return .requestParameters(
+                parameters: parameters,
+                encoding: URLEncoding.default)
         default:
             return .requestPlain
         }
@@ -63,7 +72,7 @@ extension ServerService: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .setWallet, .vote, .listOfNews:
+        case .setWallet, .vote, .listOfNews, .uploadNews:
             return ["Authorization": UserDefaultsManager().getUser()?.token ?? ""]
         default: return nil
         }
@@ -83,6 +92,8 @@ extension ServerService: TargetType {
             return "/api/tasks"
         case .listOfNews:
             return "/api/news"
+        case .uploadNews:
+            return "/api/news"
         case .vote(let isUp, _):
             if isUp {
                 return "/api/news/voteUp"
@@ -98,7 +109,7 @@ extension ServerService: TargetType {
         switch self {
         case .listOfTask, .listOfNews:
             return .get
-        case .vkLogin, .setWallet, .loadVideo, .loadImage:
+        case .vkLogin, .setWallet, .loadVideo, .loadImage, .uploadNews:
             return .post
         case .vote:
             return .put
@@ -114,7 +125,7 @@ extension ServerService: TargetType {
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .vkLogin:
+        case .vkLogin, .uploadNews:
             return JSONEncoding.default
         default:
             return URLEncoding.default

@@ -18,18 +18,26 @@ class NewsModel: Mappable {
     var id = ""
     var medias = [MediaModel]()
     var rating = RatingModel()
+    var user = UserModel()
     
     required init?(map: Map) {}
     init() {}
     
     func mapping(map: Map) {
-        id <- map["id"]
-        description <- map["description"]
-        place <- map["place"]
-        date <- map["lat"]
-        userId <- map["userId"]
-        medias <- map["mediaIds"]
-        rating <- map["rating"]
+        if map.mappingType == .fromJSON {
+            id <- map["id"]
+            description <- map["description"]
+            place <- map["place"]
+            date <- map["lat"]
+            userId <- map["userId"]
+            medias <- map["mediaIds"]
+            rating <- map["rating"]
+            user <- map["user"]
+        } else {
+            description >>> map["description"]
+            medias >>> map["mediaIds"]
+            id >>> map["id"]
+        }
     }
     
 }

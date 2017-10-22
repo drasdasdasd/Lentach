@@ -14,8 +14,8 @@ class UserModel: Mappable {
     var earned = Double()
     var posts = 0
     var imgSrc = ""
-    var firstName = ""
-    var secondName = ""
+    var firstName = "Анонимный"
+    var secondName = "Пользователь"
     var btcWallet = ""
     var vkId = ""
     var id = ""
